@@ -1,0 +1,24 @@
+.sectionHome {
+}
+
+.nonDisplay {
+  display: none;
+}
+.fixedFooter {
+  background-image: url("../../assets/img/header/header_bar.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: -30px 40px;
+  padding: 60px 0;
+  height: 700px;
+  width: 100%;
+  z-index: 10;
+  position: absolute;
+  display: flex;
+  background-color: rgba(0, 0, 0, 0);
+}
+@media screen and (max-width: 991px) {
+}
+
+@media screen and (max-width: 991px) {
+}

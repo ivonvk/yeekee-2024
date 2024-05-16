@@ -1,0 +1,57 @@
+.margin {
+}
+.container{
+  background-color: rgba(86, 164, 86,0.2);width: 100%;
+  
+}
+.box{
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-start;
+  margin-top: 48px;
+
+  padding-left: 24px;
+  padding-right: 24px;
+}
+.img{
+  height: 400px;
+  width: 60%;
+  object-fit: cover;
+}
+.content {
+  font-size: 22px;
+  color: #252525;
+  letter-spacing: 1px;
+  font-weight: 400;
+  display: flex;
+  margin-top: 4px;
+  text-align: left;
+  padding-left: 24px;
+  padding-right: 24px;
+  width: 70%;
+ 
+}
+
+
+
+
+@media screen and (max-width: 991px) {
+  .img{
+    height: 400px;
+    width: 90%;
+    object-fit: cover;
+  }
+  .content {
+margin-top: 48px;
+width: 90%;
+  }
+  .box{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 48px;
+  }
+  
+}

@@ -1,0 +1,153 @@
+.bar {
+  z-index: 100;
+
+  position: fixed;
+  display: flex;
+ width: var(--window-width);
+  height: 246px;
+  align-items: flex-start;
+  justify-content: center;
+
+  &.raised {
+  }
+}
+.bottomIcon {
+  width: var(--window-width);
+  background: linear-gradient(
+    180deg,
+    rgb(126, 174, 118) 53%,
+    rgb(81, 145, 100) 100%
+  );
+  border-bottom: 1px solid #ffffff;
+}
+.menusContainer {
+  color: white;
+  display: flex;
+  width: 100%;
+  height: 80px;
+  justify-content: center;
+  align-items: center;
+
+  * {
+  }
+  .smalContainer {
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+  }
+  .forceHeight {
+    height: 50px;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+  }
+  .link {
+    color: white;
+    text-decoration: none;
+    font-size: 22px;
+    line-height: 25px;
+    letter-spacing: 1.22px;
+    cursor: pointer;
+    width: 160px;
+    &:hover,
+    &:focus {
+      color: #48d2ff;
+    }
+  }
+  .underline {
+    background-color: #ffffff;
+    width: 40px;
+    height: 4px;
+    transition: 0.3s;
+
+    &:hover,
+    &:focus {
+      //   color: #48d2ff;
+    }
+  }
+  .nonUnderline {
+    width: 160px;
+    height: 4px;
+    &:hover,
+    &:focus {
+      //   color: #48d2ff;
+    }
+  }
+  &.hideMenu {
+    display: none;
+  }
+}
+@media screen and (max-width: 991px) {
+  .bottomIcon {
+    width: var(--window-width);
+    background: linear-gradient(
+      180deg,
+      rgb(126, 174, 118) 53%,
+      rgb(81, 145, 100) 100%
+    );
+    border-bottom: 1px solid #ffffff;
+    height: 50px;
+  }
+  .menusContainer {
+    display: none;
+  }
+}
+
+.wrapper {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  flex-direction: column;
+}
+.menuButton {
+  display: none;
+  cursor: pointer;
+  background: none;
+  border: none;
+
+  &.collapsed {
+    display: block;
+  }
+}
+
+@media screen and (max-width: 991px) {
+  .menuButton {
+    display: block;
+    cursor: pointer;
+    background: none;
+    border: none;
+  }
+}
+
+.hamburger {
+  position: relative;
+  width: 48px;
+  height: 48px;
+
+  padding: 9px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  div {
+    width: 100%;
+    height: 4px;
+    border-radius: 2;
+    background-color: white;
+    opacity: 1;
+    transition: 0.3s;
+  }
+  &.close {
+    :nth-child(1) {
+      transform: rotate(45deg) translate(10px, 10px) scale(1.5);
+    }
+    :nth-child(2) {
+      opacity: 0;
+    }
+    :nth-child(3) {
+      transform: rotate(-45deg) translate(8px, -8px) scale(1.5);
+    }
+  }
+}

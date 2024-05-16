@@ -1,0 +1,1 @@
+export const top_bar_with_margin = 310;

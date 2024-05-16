@@ -1,0 +1,32 @@
+{
+  "seo.title_long":"義記屯門康寶路",
+  "seo.description":"義記膠鐵桶買賣 - 新界屯門康寶路88號前，請在英文字牌TREVI轉右，在意大利地基門口左邊鐵門",
+  "website.name": "義記",
+  "website.shortDescription": "香港專業回收化工桶，舊桶再處理多用途化",
+ 
+  "menu.homepage": "主頁",
+ "menu.service": "服務",
+"menu.contact_us": "聯絡我們",
+"menu.about_us": "關於我們",
+
+"homepage.service":"服務範圍",
+"homepage.service.shortDescription":"回收買賣各種膠桶鐵桶，訂造服務，九龍新界港島上門送貨服務",
+
+"service.product_list": "貨品清單",
+"product_list.shortDescription":"回收買賣各種膠桶鐵桶",
+
+"service.hardware_recycling": "五金回收",
+"hardware_recycling.shortDescription":"義記",
+
+"service.customization_service": "訂造服務",
+"customization_service.shortDescription":"提供訂造要求，尺吋大小",
+
+"service.payment_channels": "支付渠道",
+"payment_channels.shortDescription":"聯絡後提供支付方式",
+
+"footer.mailing_address": "通訊地址",
+"footer.phone": "電話",
+"footer.email": "電郵",
+"footer.clickMe": "點擊地圖打開Google Map"
+
+}

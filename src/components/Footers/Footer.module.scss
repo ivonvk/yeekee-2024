@@ -1,0 +1,138 @@
+.footer {
+  background-color: #283237;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: bottom;
+  background-image: url("../../assets/img/background/header.png");
+  background-size: cover;
+  background-position: 0px -400px;
+  align-items: center;
+  flex-direction: column;
+  display: flex;
+
+}
+.mapImg{
+  width: 100%;
+  height: 100%;
+}
+.label{
+  color:rgb(164, 255, 167);
+  font-weight: bold;
+  font-size: 18px;
+  width: 150px;
+}
+.clickMe{
+  color:rgb(164, 255, 167);
+  font-weight: bold;
+  font-size: 18px;
+}
+.text{
+  color:#ffffff;
+  font-weight: bold;
+  width:70%;
+  font-size: 18px;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+.textBox{
+  display: flex;
+  flex-direction: row;
+  margin-top: 6px;
+  margin-bottom: 6px;
+}
+.textBoxes{
+  display: flex;
+  flex-direction: column;
+
+}
+.bottomText{
+  color:#ffffff;
+  font-weight: bold;
+  font-size: 18px;
+width: 100%;
+background-color: #16321b;
+text-align: center;
+}
+.section{
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding-top: 50px;
+  padding-bottom: 50px;
+  padding-left: 100px;
+  padding-right: 100px;
+  background-color: rgba(52, 76, 60, 0.5);
+}
+
+@media screen and (max-width: 1165px) {
+
+  .footer {
+
+    background-position: 0px 0px;
+    
+  
+  }
+
+}
+
+@media screen and (max-width: 991px) {
+  .section{
+  
+    flex-direction: column;
+align-items: flex-start;
+  }
+  .mapImg{
+    width: 100%;
+    height: 400px;
+    object-fit: contain;
+  }
+
+  .clickMe{
+    margin-top: 48px;
+
+  }
+  .footer {
+    background-color: #283237;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: bottom;
+    background-image: url("../../assets/img/background/header.png");
+    background-size: cover;
+    background-position: 0px -400px;
+    align-items: center;
+    flex-direction: column;
+    display: flex;
+    position: relative;
+    top:40px
+  }
+  .textBox{
+    display: flex;
+    flex-direction: column;
+    margin-top: 12px;
+    margin-bottom: 12px;
+  }
+  .footer {
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: bottom;
+  }
+}
+@media screen and (max-width: 557px) {
+  .section{
+  
+    flex-direction: column;
+align-items: center
+  }
+  .clickMe{
+    margin-top: 48px;
+
+  }
+  .mapImg{
+    height: 300px;
+    width: 100%;
+    min-width: 300px;
+    margin-top:0px;
+    object-fit: cover;
+  }
+}
