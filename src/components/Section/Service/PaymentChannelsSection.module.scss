@@ -3,3 +3,26 @@
 .container{
   background-color: rgba(86, 164, 86,0.2);width: 100%;
 }
+
+.textBox{
+  display: flex;
+  flex-direction: row;
+  margin-top: 48px;
+}
+
+@media screen and (max-width: 1200px) {
+
+  .textBox{
+    display: flex;
+    flex-direction: column;
+    margin-top: 48px;
+  }
+}
+@media screen and (max-width: 1200px) {
+
+  .textBox{
+    display: flex;
+    flex-direction: column;
+    margin-top: 48px;
+  }
+}

@@ -21,8 +21,17 @@
 "service.customization_service": "訂造服務",
 "customization_service.shortDescription":"提供訂造要求，尺吋大小",
 
+"customization_service.type": "種類",
+"customization_service.size": "尺吋",
+"customization_service.process": "工序",
+
+
 "service.payment_channels": "支付渠道",
 "payment_channels.shortDescription":"聯絡後提供支付方式",
+
+"payment_channels.fps": "FPS",
+"payment_channels.payme": "Payme",
+"payment_channels.cash": "現金",
 
 "footer.mailing_address": "通訊地址",
 "footer.phone": "電話",

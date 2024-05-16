@@ -5,26 +5,30 @@ import styles from "../Display/DisplayCommon.module.scss";
 
 
 
-interface InfoBoxProps {
+interface IconBoxProps {
 
 title:string;
-content:string;
+img:any;
+content?:string;
+
 className?:any
 
 }
 
-const InfoBox: React.FC<
-  InfoBoxProps
-> = ({  title,content,className}) => {
+const IconBox: React.FC<
+  IconBoxProps
+> = ({  title,img,className,content}) => {
   const { formatMessage } = useIntl();
 
   return (
-   <div className={`${styles.infoBox} ${className}`}>
+   <div className={`${styles.iconBox} ${className}`}>
+    <img src={img} className={`${styles.img}`}></img>
     <div className={styles.title}>{title}</div>
-    <div className={styles.bar}></div>
+    <div className={styles.imgBar}></div>
     <div className={styles.content}>{content}</div>
+
    </div>
   );
 };
 
-export default InfoBox;
+export default IconBox;
