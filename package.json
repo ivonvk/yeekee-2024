@@ -6,8 +6,8 @@
     "createAssetsExportFile": "node ./scripts/createAssetsExportFile > ./src/assets/img/assets.js",
     "createItemsAssetsExportFile": "node ./scripts/createItemsAssetsExportFile > ./src/assets/items/items_array.js",
     "dev": "next dev",
+    "build": "next build",
     "start": "react-scripts start",
-    "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },

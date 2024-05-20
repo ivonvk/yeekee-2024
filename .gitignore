@@ -54,3 +54,5 @@ yarn-error.log*
 Icon?
 ehthumbs.db
 Thumbs.db
+# Local Netlify folder
+.netlify
