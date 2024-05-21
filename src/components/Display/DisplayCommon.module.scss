@@ -1,10 +1,8 @@
-
-
-.infoBox{
+.infoBox {
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: rgba(86, 164, 86,0.1);
+  background-color: rgba(86, 164, 86, 0.1);
   margin-left: 12px;
   margin-right: 12px;
   border-radius: 12px;
@@ -12,7 +10,7 @@
   padding-bottom: 24px;
 }
 
-.iconBox{
+.iconBox {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -22,10 +20,10 @@
   padding-top: 24px;
   padding-bottom: 24px;
 }
-.img{
+.img {
   border-radius: 20px;
-  height:200px;
-  width:200px;
+  height: 200px;
+  width: 200px;
   object-fit: cover;
   margin-bottom: 12px;
   border: 2px solid green;
@@ -38,19 +36,18 @@
   display: flex;
   justify-content: center;
   align-items: center;
-
 }
-.bar{
+.bar {
   height: 4px;
-  width:100px;
+  width: 100px;
   margin-bottom: 12px;
   background-color: green;
   padding-left: 12px;
   padding-right: 12px;
 }
-.imgBar{
+.imgBar {
   height: 4px;
-  width:100px;
+  width: 100px;
   margin-bottom: 12px;
   background-color: green;
   padding-left: 12px;
@@ -65,43 +62,38 @@
   justify-content: center;
   align-items: center;
   margin-top: 4px;
-  width:400px;
+  width: 400px;
   padding-left: 12px;
   padding-right: 12px;
 }
-@media screen and (max-width: 1200px) {
+@media screen and (max-width: 1270px) {
   .title {
-  width:100px;
-
-
+    width: 100px;
   }
-  .bar{
+  .bar {
     height: 4px;
-  width:200px;
-
-  
+    width: 200px;
+    
     background-color: green;
     padding-left: 12px;
     padding-right: 12px;
   }
-  .content {
-
-    width:80%;
-   margin-bottom: 24px;
-  }
-}
-@media screen and (max-width: 991px) {
-
-
-  .infoBox{
-
-    margin-top: 24px;
+  .infoBox {
     margin-bottom: 24px;
   }
   
-  .iconBox{
+  .content {
+    width: 80%;
+    margin-bottom: 24px;
+  }
+}
+@media screen and (max-width: 991px) {
+  .infoBox {
+    margin-bottom: 24px;
+  }
+  
+  .iconBox {
     margin-top: 0px;
     margin-bottom: 0px;
   }
-
 }

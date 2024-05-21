@@ -16,7 +16,6 @@ className?:any
 const InfoBox: React.FC<
   InfoBoxProps
 > = ({  title,content,className}) => {
-  const { formatMessage } = useIntl();
 
   return (
    <div className={`${styles.infoBox} ${className}`}>

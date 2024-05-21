@@ -7,6 +7,7 @@ import InnerSection from "../InnerSection";
 import InfoBox from "../../Display/InfoBox";
 import { payment, serviceInfos } from "../../../constant/text/services";
 import assets from "../../../assets/img/assets";
+import { useTranslation } from "react-i18next";
 
 
 
@@ -15,20 +16,16 @@ interface ProductListSectionProps {}
 const ProductListSection: React.FC<
   ProductListSectionProps
 > = ({  }) => {
-  const { formatMessage } = useIntl();
+  const { t } = useTranslation();
 
   return (
     <InnerSection className={`${styles.container} ${sectionStyles.margin} ${sectionStyles.container}`}>
         <div className={`${styles.section} ${sectionStyles.section}`}>
             <div className={styles.title}>
-              {formatMessage({
-                id: `service.product_list`,
-              })}
+              {t(`service.product_list`)}
             </div>
             <div className={styles.shortDescription}>
-              {formatMessage({
-                id: `product_list.shortDescription`,
-              })}
+              {t(`product_list.shortDescription`)}
             </div>
             <div className={sectionStyles.box}>
               <img className={sectionStyles.img} src={assets.SERVICE_LIST}></img>

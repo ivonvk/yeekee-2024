@@ -18,7 +18,6 @@ className?:any
 const IconBox: React.FC<
   IconBoxProps
 > = ({  title,img,className,content}) => {
-  const { formatMessage } = useIntl();
 
   return (
    <div className={`${styles.iconBox} ${className}`}>

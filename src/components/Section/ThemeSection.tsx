@@ -9,24 +9,27 @@ import styles from "../Section/ThemeSection.module.scss";
 import globals from "../../styles/Home.module.css";
 import { sliderImageLinks } from "../../constant/link";
 import assets from "../../assets/assets";
+import { useTranslation } from "react-i18next";
 
 interface MainCarouselProps {
   children?: any;
 }
 
 const ThemeSection: React.FC<MainCarouselProps> = ({ children }) => {
-  const { formatMessage } = useIntl();
+  const { t } = useTranslation();
 
   return (
     <div className={`${styles.margin}`}>
       <div className={styles.titleImg}>
         <div className={styles.websiteBox}>
-          <div className={styles.websiteName}>
-            {formatMessage({ id: `website.name` })}
+         <div className={styles.websiteBottom}>
+         <div className={styles.websiteName}>
+            {t(`website.name`)}
           </div>
           <div className={styles.websiteDesc}>
-            {formatMessage({ id: `website.shortDescription` })}
+            {t(`website.shortDescription`)}
           </div>
+         </div>
         </div>
       </div>
       {children}

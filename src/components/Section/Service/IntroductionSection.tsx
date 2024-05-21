@@ -6,6 +6,7 @@ import sectionStyles from "../Service/IntroductionSection.module.scss";
 import InnerSection from "../InnerSection";
 import InfoBox from "../../Display/InfoBox";
 import { payment, serviceInfos } from "../../../constant/text/services";
+import { useTranslation } from "react-i18next";
 
 
 
@@ -14,21 +15,18 @@ interface IntroductionSectionProps {}
 const IntroductionSection: React.FC<
   IntroductionSectionProps
 > = ({  }) => {
-  const { formatMessage } = useIntl();
+  const { t } = useTranslation();
+
 
   return (
     <InnerSection className={`${styles.container} ${sectionStyles.margin}`}>
         <div className={styles.section}>
           <div className={sectionStyles.bottomBox}>
             <div className={styles.title}>
-              {formatMessage({
-                id: `homepage.service`,
-              })}
+              {t(`homepage.service`)}
             </div>
             <div className={styles.shortDescription}>
-              {formatMessage({
-                id: `service.shortDescription`,
-              })}
+              {t(`service.shortDescription`)}
             </div>
           </div>
           <div className={sectionStyles.infoBoxes}>

@@ -16,21 +16,13 @@ import { Carousel } from 'react-responsive-carousel';
 import { ServiceSection } from "../feature/index/ServiceSection";
 import { ContactUsSection } from "../feature/index/ContactUsSection";
 import router from "next/router";
+import { useTranslation } from "react-i18next";
 
 interface HomeProps {
 }
-
-// export const getServerSideProps = async (context: NextPageContext) => {
-//   // TODO?: call api for FAQ?
-//   return {
-//     props: {
-//       initialRate: await fetchTickers(),
-//     },
-//   };
-// };
-
 const Home: NextPage<HomeProps> = ({}) => {
-  const { formatMessage } = useIntl();
+  const { t } = useTranslation();
+
   const pagesContext = usePages();
   useEffect(()=>{
     pagesContext.setPages(PagesType.homepage)
@@ -39,12 +31,8 @@ const Home: NextPage<HomeProps> = ({}) => {
   return (
     <>
       <SEO
-        title={formatMessage({
-          id: "seo.title_long",
-        })}
-        description={formatMessage({
-          id: "seo.description",
-        })}
+        title={t("seo.title_long")}
+        description={t("seo.description")}
       />
      
       

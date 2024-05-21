@@ -12,6 +12,7 @@ import "../styles/globals.scss";
 import { initGA } from "../lib/analytics";
 import { PagesProvider } from "../contexts/pages/use-pages";
 
+import "../../i18n";
 const messages: any = {
   "zh-HK": zh_HK
   

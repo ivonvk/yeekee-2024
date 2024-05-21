@@ -16,12 +16,10 @@ interface ServiceSectionProps {
 
 
 export const ServiceSection: React.FC<ServiceSectionProps> = ({  }) => {
-  const { formatMessage } = useIntl();
   const pagesContext = usePages();
   return (
     <section id="home" className={pagesContext.pages===PagesType.service? styles.sectionHome:styles.nonDisplay}>
     <ThemeSection>
-<IntroductionSection/>
 
    <Footer/>
 

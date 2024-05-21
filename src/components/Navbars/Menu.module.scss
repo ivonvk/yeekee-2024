@@ -28,18 +28,52 @@
   justify-content: center;
 
   * {
-    margin-bottom: 40px;
+    margin-bottom: 20px;
   }
-  .link {
-    color: #283237;
-    text-decoration: none;
+
+}
+.smalContainer {
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+}
+.forceHeight {
+  height: 50px;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+}
+.link {
+  color: #252525;
+  text-decoration: none;
+  font-size: 22px;
+  line-height: 25px;
+  letter-spacing: 1.22px;
+  cursor: pointer;
+  width: 160px;
+  &:hover,
+  &:focus {
+    color: #48d2ff;
   }
-  .linkBtn {
-    cursor: pointer;
-    border: none;
-    border-radius: 16px;
-    padding: 7px 28px;
-    background: #0069ff;
-    color: white;
+}
+.underline {
+  background-color: #ffffff;
+  width: 40px;
+  height: 4px;
+  transition: 0.3s;
+
+  &:hover,
+  &:focus {
+    //   color: #48d2ff;
+  }
+}
+.nonUnderline {
+  width: 160px;
+  height: 4px;
+  &:hover,
+  &:focus {
+    //   color: #48d2ff;
   }
 }

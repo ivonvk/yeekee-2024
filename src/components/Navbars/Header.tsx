@@ -8,6 +8,8 @@ import Menu from "./Menu";
 import { useIntl } from "react-intl";
 import { usePages } from "../../contexts/pages/use-pages";
 import { PagesType } from "../../types/pages";
+import { useTranslation } from "react-i18next";
+
 interface HeaderProps {
   scrollTransparent?: boolean;
 }
@@ -16,7 +18,7 @@ const switchColorThreshold = 299;
 
 const Header: React.FC<HeaderProps> = ({ scrollTransparent }) => {
   const { locale } = useRouter();
-  const { formatMessage } = useIntl();
+  const { t } = useTranslation();
 
   const [collapseOpen, setCollapseOpen] = React.useState(false);
   const [isClosing, setIsClosing] = React.useState(false);
@@ -87,7 +89,7 @@ useEffect(() => {
               onClick={() => {
               }}
             >
-              {formatMessage({ id: `menu.${page}` })}
+              {t(`menu.${page}`)}
             </a>
           </div>
           <div
@@ -111,7 +113,7 @@ useEffect(() => {
                 window.scrollTo(0, document.documentElement.scrollHeight);
               }}
             >
-              {formatMessage({ id: `menu.${page}` })}
+              {t(`menu.${page}`)}
             </a>
           </div>
           <div

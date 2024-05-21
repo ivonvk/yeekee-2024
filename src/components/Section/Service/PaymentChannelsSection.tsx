@@ -8,7 +8,7 @@ import InfoBox from "../../Display/InfoBox";
 import { payment, serviceInfos } from "../../../constant/text/services";
 import IconBox from "../../Display/IconBox";
 import assets from "../../../assets/img/assets";
-
+import { useTranslation } from "react-i18next";
 
 
 interface PaymentChannelsSectionProps {}
@@ -16,25 +16,21 @@ interface PaymentChannelsSectionProps {}
 const PaymentChannelsSection: React.FC<
   PaymentChannelsSectionProps
 > = ({  }) => {
-  const { formatMessage } = useIntl();
+  const { t } = useTranslation();
 
   return (
     <InnerSection className={`${styles.container} ${sectionStyles.margin}`}>
         <div className={styles.section}>
             <div className={styles.title}>
-              {formatMessage({
-                id: `service.payment_channels`,
-              })}
+              {t(`service.payment_channels`)}
             </div>
             <div className={styles.shortDescription}>
-              {formatMessage({
-                id: `payment_channels.shortDescription`,
-              })}
+              {t(`payment_channels.shortDescription`)}
             </div>
             <div className={sectionStyles.textBox}>
-      <IconBox title={formatMessage({ id: 'payment_channels.fps' })} img={assets.SERVICE_FPS}/>
-    <IconBox title={formatMessage({id:'payment_channels.payme'})} img={assets.SERVICE_PAYME}/>
-    <IconBox title={formatMessage({id:'payment_channels.cash'})} img={assets.SERVICE_PAYMENT}/></div>
+      <IconBox title={t('payment_channels.fps')} img={assets.SERVICE_FPS}/>
+    <IconBox title={t('payment_channels.payme')} img={assets.SERVICE_PAYME}/>
+    <IconBox title={t('payment_channels.cash')} img={assets.SERVICE_PAYMENT}/></div>
     </div>
     </InnerSection>
   );

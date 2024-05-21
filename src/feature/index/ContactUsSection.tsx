@@ -16,7 +16,6 @@ interface HomeSectionProps {
 
 
 export const ContactUsSection: React.FC<HomeSectionProps> = ({  }) => {
-  const { formatMessage } = useIntl();
   const pagesContext = usePages();
   return (
     <section id="home" className={pagesContext.pages===PagesType.contact_us? styles.sectionHome:styles.nonDisplay}>

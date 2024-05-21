@@ -7,14 +7,15 @@ import { useIntl } from "react-intl";
 import styles from "./Footer.module.scss";
 import assets from "../../assets/img/assets";
 import { googleMapLink } from "../../constant/link";
+import { useTranslation } from "react-i18next";
 
 // core components
 
 const Footer = () => {
-  const { formatMessage } = useIntl();
+  const { t } = useTranslation();
+
+
   const router = useRouter();
-  const pathName = router.asPath;
-  // console.log(`router: ${JSON.stringify(router)}`)
   const { locale, defaultLocale } = router;
   useEffect(() => {
     const handleWindowResize = () => {
@@ -35,7 +36,7 @@ const Footer = () => {
         <div className={styles.textBoxes}>
           <div className={styles.textBox}>
             <div className={styles.label}>
-              {`${formatMessage({ id: `footer.mailing_address` })}: `}
+              {`${t(`footer.mailing_address`)}: `}
             </div>
             <div
               className={styles.text}
@@ -44,20 +45,20 @@ const Footer = () => {
 
           <div className={styles.textBox}>
             <div className={styles.label}>
-              {`${formatMessage({ id: `footer.phone` })}: `}
+              {`${t(`footer.phone`)}: `}
             </div>
             <div className={styles.text}>{`93558010 陳生`}</div>
           </div>
           <div className={styles.textBox}>
             <div className={styles.label}>
-              {`${formatMessage({ id: `footer.email` })}: `}
+              {`${t(`footer.email`)}: `}
             </div>
             <div className={styles.text}>{"YUSING1961@GMAIL.COM"}</div>
           </div>
         </div>
         <div style={{flex:1}}/>
         <a href={googleMapLink} target="_blank">
-          <div className={styles.clickMe}>{`${formatMessage({ id: `footer.clickMe` })}`}</div>
+          <div className={styles.clickMe}>{`${t(`footer.clickMe`)}: `}</div>
         <img src={assets.FOOTER_FOOTER_MAP} className={styles.mapImg}></img></a>
       </div>
       <div

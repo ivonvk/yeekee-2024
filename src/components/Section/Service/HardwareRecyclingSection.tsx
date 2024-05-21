@@ -6,27 +6,23 @@ import sectionStyles from "../Service/HardwareRecyclingSection.module.scss";
 import InnerSection from "../InnerSection";
 import InfoBox from "../../Display/InfoBox";
 import { payment, serviceInfos } from "../../../constant/text/services";
+import { useTranslation } from "react-i18next";
 
 interface HardwareRecyclingSectionProps {}
 
 const HardwareRecyclingSection: React.FC<
   HardwareRecyclingSectionProps
 > = ({}) => {
-  const { formatMessage } = useIntl();
+  const { t } = useTranslation();
 
   return (
     <InnerSection className={`${styles.container} ${sectionStyles.margin} ${sectionStyles.container}`}>
       <div className={`${styles.section} ${sectionStyles.section}`}>
         <div className={`${styles.title} ${sectionStyles.zIndex}`}>
-          {formatMessage({
-            id: `service.hardware_recycling`,
-          })}
+          {t(`service.hardware_recycling`)}
         </div>
         <div className={`${styles.shortDescription} ${sectionStyles.zIndex}`}>
-
-          {formatMessage({
-            id: `hardware_recycling.shortDescription`,
-          })}
+          {t(`hardware_recycling.shortDescription`)}
         </div>
         <div className={sectionStyles.box}>
           <div
