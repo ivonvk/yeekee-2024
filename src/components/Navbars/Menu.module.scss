@@ -28,7 +28,7 @@
   justify-content: center;
 
   * {
-    margin-bottom: 20px;
+    margin-bottom:30px;
   }
 
 }
@@ -40,7 +40,7 @@
   flex-direction: column;
 }
 .forceHeight {
-  height: 50px;
+  height: 10px;
   justify-content: center;
   align-items: center;
   display: flex;
@@ -59,16 +59,20 @@
   }
 }
 .underline {
-  background-color: #ffffff;
-  width: 40px;
-  height: 4px;
-  transition: 0.3s;
-
+  color: #252525;
+  text-decoration: none;
+  font-size: 22px;
+  line-height: 25px;
+  letter-spacing: 1.22px;
+  cursor: pointer;
+  width: 160px;
   &:hover,
   &:focus {
-    //   color: #48d2ff;
+    color: #48d2ff;
   }
+  text-decoration: underline;
 }
+
 .nonUnderline {
   width: 160px;
   height: 4px;

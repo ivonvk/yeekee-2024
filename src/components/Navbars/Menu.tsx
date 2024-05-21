@@ -28,7 +28,7 @@ const Menu: React.FC<MenuProps> = ({ open, toggleMenu }) => {
         <div className={styles.smalContainer}>
           <div className={styles.forceHeight}>
             <a
-              className={styles.link}
+              className={pagesContext.pages === page?styles.underline:styles.link}
               onClick={() => {
                 toggleMenu()
 
@@ -37,13 +37,7 @@ const Menu: React.FC<MenuProps> = ({ open, toggleMenu }) => {
               {t(`menu.${page}`)}
             </a>
           </div>
-          <div
-            className={
-              pagesContext.pages === page
-                ? styles.underline
-                : styles.nonUnderline
-            }
-          ></div>
+       
         </div>
       </Link>
     );
