@@ -29,7 +29,10 @@ let varStr = '';
 files.forEach(f => {
   let splitted = f.split('.');
   let varName = splitted[0].split('/').join('_').toUpperCase();
-  importStr += `import ${varName} from './${f}'\n`;
+  varName = varName.replace('(','')
+  varName = varName.replace(')','')
+  varName = varName.replace(' ','_')
+  importStr += `import ${varName} from './${f}';\n`;
   if(count+1>=files.length){
     varStr += `  ${varName}.src\n`;
 
