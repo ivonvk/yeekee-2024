@@ -2,7 +2,6 @@ import type { NextPage } from "next";
 
 import { useEffect } from "react";
 import styles from "../../styles/main.module.scss";
-import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 import HardwareRecyclingSection from "../../components/Section/Service/HardwareRecyclingSection";
 import ProductListSection from "../../components/Section/Service/ProductListSection";
 import CustomizationServiceSection from "../../components/Section/Service/CustomizationServiceSection";

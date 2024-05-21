@@ -1,6 +1,4 @@
 import React, { useEffect } from "react";
-import { useIntl } from "react-intl";
-import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 import styles from "../Display/DisplayCommon.module.scss";
 
 

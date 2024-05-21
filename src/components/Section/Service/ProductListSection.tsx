@@ -1,11 +1,8 @@
 import React, { useEffect } from "react";
 import { useIntl } from "react-intl";
-import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 import styles from "../SectionCommon.module.scss";
 import sectionStyles from "../Service/ProductListSection.module.scss";
 import InnerSection from "../InnerSection";
-import InfoBox from "../../Display/InfoBox";
-import { payment, serviceInfos } from "../../../constant/text/services";
 import assets from "../../../assets/img/assets";
 import { useTranslation } from "react-i18next";
 

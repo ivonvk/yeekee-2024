@@ -4,7 +4,6 @@ import type { NextPage } from "next";
 import { useEffect } from "react";
 import { usePages } from "../contexts/pages/use-pages";
 import { PagesType } from "../types/pages";
-import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 import router from "next/router";
 import { useTranslation } from "react-i18next";
 

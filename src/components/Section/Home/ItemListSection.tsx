@@ -1,6 +1,4 @@
 import React, { useEffect } from "react";
-import { useIntl } from "react-intl";
-import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 import styles from "../../Section/SectionCommon.module.scss";
 import sectionStyles from "../../Section/Home/ItemListSection.module.scss";
 import InnerSection from "../InnerSection";
@@ -17,12 +15,12 @@ const ItemListSection: React.FC<ItemListSectionProps> = ({}) => {
 
       items_array.map((item, index) => {
         if (index % 3 === 0||(index === items_array.length-1)) {
-          items.push(<img src={item}className={sectionStyles.img}></img>)
+          items.push(<img src={item}className={sectionStyles.img} key={index}></img>)
 
-          array.push(<div className={sectionStyles.imgBoxRow}>{items}</div>);
+          array.push(<div className={sectionStyles.imgBoxRow} key={"array_"+index}>{items}</div>);
           items = [];
         }else{
-          items.push(<img src={item}className={sectionStyles.img}></img>)
+          items.push(<img src={item}className={sectionStyles.img} key={index}></img>)
 
         }
 

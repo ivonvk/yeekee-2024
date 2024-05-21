@@ -1,14 +1,5 @@
-import Link from "next/link";
-import { useRouter } from "next/router";
-import React, { useEffect } from "react";
-import { Container } from "react-bootstrap";
-import { useIntl } from "react-intl";
-import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
-import { Carousel } from "react-responsive-carousel";
+import React from "react";
 import styles from "../Section/ThemeSection.module.scss";
-import globals from "../../styles/Home.module.css";
-import { sliderImageLinks } from "../../constant/link";
-import assets from "../../assets/assets";
 import { useTranslation } from "react-i18next";
 
 interface MainCarouselProps {

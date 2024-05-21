@@ -2,7 +2,6 @@ import type { NextPage } from "next";
 
 import { useEffect } from "react";
 import styles from "../../styles/main.module.scss";
-import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 import Header from "../../components/Navbars/Header";
 import { SEO } from "../../components/seo";
 import { usePages } from "../../contexts/pages/use-pages";
