@@ -8,7 +8,7 @@
   align-items: center;
   flex-direction: column;
   display: flex;
-
+  
 }
 .mapImg{
   width: 100%;
@@ -42,15 +42,15 @@
 .textBoxes{
   display: flex;
   flex-direction: column;
-
+  
 }
 .bottomText{
   color:#ffffff;
   font-weight: bold;
   font-size: 18px;
-width: 100%;
-background-color: #16321b;
-text-align: center;
+  width: 100%;
+  background-color: #16321b;
+  text-align: center;
 }
 .section{
   width: 100%;
@@ -68,41 +68,33 @@ text-align: center;
 
 @media screen and (max-width: 997px) {
   .section{
-  
+    
     flex-direction: column;
-align-items: center
+    align-items: center
   }
-  .clickMe{
-    margin-top: 48px;
 
+  .footer {
+    
+    background-position: 0px -200px;
+    
+    
   }
+  .section{
+    
+    flex-direction: column;
+    align-items: flex-start;
+  }
+ 
+    
   .mapImg{
     height: 300px;
     width: 100%;
-    min-width: 300px;
     margin-top:0px;
     object-fit: cover;
   }
-  .footer {
-
-    background-position: 0px -200px;
-    
-  
-  }
-  .section{
-  
-    flex-direction: column;
-align-items: flex-start;
-  }
-  .mapImg{
-    width: 100%;
-    height: 400px;
-    object-fit: contain;
-  }
-
   .clickMe{
     margin-top: 48px;
-
+    
   }
   .footer {
     background-color: #283237;

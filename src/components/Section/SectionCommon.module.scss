@@ -31,3 +31,13 @@
   align-items: center;
   margin-top: 4px;
 }
+@media screen and (max-width: 997px) {
+
+.container {
+  display: flex;
+  flex-direction: column;
+  padding-left: 24px;
+  padding-right: 24px
+  ;
+}
+}

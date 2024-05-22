@@ -94,4 +94,12 @@
   .imgBoxRow{
     flex-direction: column;
   }
+  .img{
+    display: flex;
+    flex-direction: column;
+    height: 350px;
+    width:  100%;
+    padding: 20px;
+    object-fit: cover;
+  }
 }
