@@ -8,6 +8,7 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
+  align-items: center;
   margin-top: 48px;
   width: 100%;
   padding-left: 40px;
@@ -36,7 +37,7 @@
   display: flex;
   flex-direction: column;
   height: 350px;
-  width:  100%;
+  width:  40%;
   padding: 20px;
   object-fit: cover;
 }
@@ -45,7 +46,6 @@
   flex-direction: column;
   margin-bottom: 20px;
   margin-top: 48px;
-  width: 100%;
 }
 .imgBoxRow{
   display: flex;
@@ -53,14 +53,21 @@
   margin-left: 10px;
   margin-right: 10px;
 
+
 }
 @media screen and (max-width: 997px) {
+  .imgBoxRow{
+
+    align-items: center;
+  
+  }
   .bottomBox {
     display: flex;
     flex-direction: column;
     align-items: center;
     padding-left: 40px;
     padding-right: 40px;
+    justify-content: center;
   }
   .bottomTextRegular {
     text-align: left;

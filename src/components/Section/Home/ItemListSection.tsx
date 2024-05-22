@@ -14,7 +14,7 @@ const ItemListSection: React.FC<ItemListSectionProps> = ({}) => {
     var items = [] as any[];
 
       items_array.map((item, index) => {
-        if (index % 3 === 0||(index === items_array.length-1)) {
+        if (index % 3 === 2||(index === items_array.length-1)) {
           items.push(<img src={item}className={sectionStyles.img} key={index}></img>)
 
           array.push(<div className={sectionStyles.imgBoxRow} key={"array_"+index}>{items}</div>);
