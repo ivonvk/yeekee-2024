@@ -54,13 +54,7 @@
   margin-right: 10px;
 
 }
-@media screen and (max-width: 1554px) {
-  .bottomBox {
-    padding-left: 40px;
-    padding-right: 40px;
-  }
-}
-@media screen and (max-width: 1270px) {
+@media screen and (max-width: 997px) {
   .bottomBox {
     display: flex;
     flex-direction: column;
@@ -68,8 +62,6 @@
     padding-left: 40px;
     padding-right: 40px;
   }
-}
-@media screen and (max-width: 1038px) {
   .bottomTextRegular {
     text-align: left;
     padding-left: 12px;
@@ -80,8 +72,6 @@
     flex-direction: column;
     flex: 1;
   }
-}
-@media screen and (max-width: 991px) {
   .bottomBox {
     padding-left: 0px;
     padding-right: 0px;

@@ -7,18 +7,10 @@
 .textBox{
   display: flex;
   flex-direction: row;
-  margin-top: 48px;
+  margin-top: 48px;justify-content: center;width: 50%;
 }
 
-@media screen and (max-width: 1200px) {
-
-  .textBox{
-    display: flex;
-    flex-direction: column;
-    margin-top: 48px;
-  }
-}
-@media screen and (max-width: 1200px) {
+@media screen and (max-width: 997px) {
 
   .textBox{
     display: flex;

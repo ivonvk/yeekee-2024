@@ -7,15 +7,15 @@
   margin-right: 12px;
   border-radius: 12px;
   padding-top: 24px;
-  padding-bottom: 24px;
+  padding-bottom: 24px;width: 33%;
 }
 
 .iconBox {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-left: 12px;
-  margin-right: 12px;
+  margin-left: 48px;
+  margin-right: 48px;
   border-radius: 12px;
   padding-top: 24px;
   padding-bottom: 24px;
@@ -62,11 +62,10 @@
   justify-content: center;
   align-items: center;
   margin-top: 4px;
-  width: 400px;
   padding-left: 12px;
   padding-right: 12px;
 }
-@media screen and (max-width: 1270px) {
+@media screen and (max-width: 997px) {
   .title {
     width: 100px;
   }
@@ -79,21 +78,15 @@
     padding-right: 12px;
   }
   .infoBox {
-    margin-bottom: 24px;
-  }
-  
-  .content {
-    width: 80%;
-    margin-bottom: 24px;
-  }
-}
-@media screen and (max-width: 991px) {
-  .infoBox {
-    margin-bottom: 24px;
+    margin-bottom: 24px;width: 100%;
   }
   
   .iconBox {
     margin-top: 0px;
     margin-bottom: 0px;
+  }
+  .content {
+    width: 80%;
+    margin-bottom: 24px;
   }
 }

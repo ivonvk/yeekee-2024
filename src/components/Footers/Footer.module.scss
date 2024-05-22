@@ -5,7 +5,6 @@
   background-position: bottom;
   background-image: url("../../assets/img/background/header.png");
   background-size: cover;
-  background-position: 0px -400px;
   align-items: center;
   flex-direction: column;
   display: flex;
@@ -65,18 +64,31 @@ text-align: center;
   background-color: rgba(52, 76, 60, 0.5);
 }
 
-@media screen and (max-width: 1465px) {
 
+
+@media screen and (max-width: 997px) {
+  .section{
+  
+    flex-direction: column;
+align-items: center
+  }
+  .clickMe{
+    margin-top: 48px;
+
+  }
+  .mapImg{
+    height: 300px;
+    width: 100%;
+    min-width: 300px;
+    margin-top:0px;
+    object-fit: cover;
+  }
   .footer {
 
     background-position: 0px -200px;
     
   
   }
-
-}
-
-@media screen and (max-width: 991px) {
   .section{
   
     flex-direction: column;
@@ -116,23 +128,5 @@ align-items: flex-start;
     background-size: cover;
     background-repeat: no-repeat;
     background-position: bottom;
-  }
-}
-@media screen and (max-width: 557px) {
-  .section{
-  
-    flex-direction: column;
-align-items: center
-  }
-  .clickMe{
-    margin-top: 48px;
-
-  }
-  .mapImg{
-    height: 300px;
-    width: 100%;
-    min-width: 300px;
-    margin-top:0px;
-    object-fit: cover;
   }
 }
