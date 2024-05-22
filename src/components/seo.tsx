@@ -20,6 +20,7 @@ export const SEO: React.FC<SeoProps> = ({
 }) => (
   <Head>
     <title>{title}</title>
+    <meta name="google-site-verification" content="sDFkCzxvY3ztmNbp5BrQU5An8fnuhQnwPAXMmsxpVzs" />
     <meta name="description" content={description} />
     <meta
       name="viewport"
