@@ -45,7 +45,7 @@ const ItemListSection: React.FC<ItemListSectionProps> = ({}) => {
           items.push(<img 
             
             onClick={()=>{
-              callWhatsApp()
+            //  callWhatsApp()
             }}
             src={item}className={sectionStyles.img} key={index}></img>)
 
@@ -54,7 +54,7 @@ const ItemListSection: React.FC<ItemListSectionProps> = ({}) => {
         }else{
           items.push(<img 
             onClick={()=>{
-              callWhatsApp()
+             // callWhatsApp()
             }}
             src={item}className={sectionStyles.img} key={index}></img>)
 
