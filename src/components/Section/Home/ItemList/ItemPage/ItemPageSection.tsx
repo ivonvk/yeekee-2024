@@ -91,20 +91,17 @@ const ItemPageSection: React.FC<ItemPageSectionProps> = ({}) => {
   return (
     <InnerSection className={`${styles.container} ${sectionStyles.margin}`}>
       <div className={styles.section}>
-      <div
-      onClick={()=>{
-        router.push({
-          pathname: `/homepage`
-        });
-      }}
-      className={sectionStyles.back}>{t('label.backHomepage')}</div>
-
+      <div className={`${styles.title} ${sectionStyles.back}`}
+                 onClick={()=>{
+                  router.push({
+                    pathname: `/homepage`
+                  });
+                }}
+           >{t(`label.backHomepage`)}</div>
         <div className={sectionStyles.box}>
           
-          {/* <div className={styles.title}>{t(`homepage.service`)}</div>
-          <div className={styles.shortDescription}>
-            {t(`homepage.service.shortDescription`)}
-          </div> */}
+        
+       
           <img
             alt={`${id}`}
             onClick={() => {
