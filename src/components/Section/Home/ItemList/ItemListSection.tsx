@@ -1,10 +1,11 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import styles from "../../SectionCommon.module.scss";
 import sectionStyles from "./ItemListSection.module.scss";
 import InnerSection from "../../InnerSection";
 import { useTranslation } from "react-i18next";
 import items_array from "../../../../assets/items/items_array";
 import { useRouter } from "next/router";
+import ItemModel from "../../../../types/model/ItemModel";
 
 interface ItemListSectionProps {}
 
@@ -12,6 +13,7 @@ const ItemListSection: React.FC<ItemListSectionProps> = ({}) => {
   const { t } = useTranslation();
   const router = useRouter();
   const { locale } = useRouter();
+
   const renderItemArray = () => {
     var array = [] as any[];
     var items = [] as any[];
@@ -26,6 +28,7 @@ const ItemListSection: React.FC<ItemListSectionProps> = ({}) => {
     items_array.map(async (item, index) => {
       if (index % 3 === 2 || index === items_array.length - 1) {
         items.push(
+          <div className={sectionStyles.imgBox}>
           <img
             alt={item}
             onClick={() => {
@@ -35,6 +38,8 @@ const ItemListSection: React.FC<ItemListSectionProps> = ({}) => {
             className={sectionStyles.img}
             key={index}
           ></img>
+          <div className={sectionStyles.text}>{new ItemModel({ ...items.find((x) => x?.id?.includes(getId(item) as any)) }).name_zh??"-"}</div>
+          </div>
         );
 
         array.push(
@@ -45,6 +50,7 @@ const ItemListSection: React.FC<ItemListSectionProps> = ({}) => {
         items = [];
       } else {
         items.push(
+          <div className={sectionStyles.imgBox}>
           <img
           alt={item}
             onClick={() => {
@@ -54,6 +60,8 @@ const ItemListSection: React.FC<ItemListSectionProps> = ({}) => {
             className={sectionStyles.img}
             key={index}
           ></img>
+          <div className={sectionStyles.text}>{new ItemModel({ ...items.find((x) => x?.id?.includes(getId(item) as any)) }).name_zh??"-"}</div>
+          </div>
         );
       }
     });

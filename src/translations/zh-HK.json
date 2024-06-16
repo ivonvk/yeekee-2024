@@ -9,8 +9,8 @@
 "menu.contact_us": "聯絡我們",
 "menu.about_us": "關於我們",
 
-"homepage.service":"服務範圍",
-"homepage.service.shortDescription":"回收買賣各種膠桶鐵桶，訂造服務，九龍新界港島上門送貨服務",
+"homepage.service":"貨品清單",
+"homepage.service.shortDescription":"點擊圖片打開詳細資料",
 
 "service.product_list": "貨品清單",
 "product_list.shortDescription":"回收買賣各種膠桶鐵桶",
@@ -41,5 +41,6 @@
 "label.name":"貨品名稱: ",
 "label.description":"貨品描述:",
 "label.otherImgs":"有關貨品:",
-"label.backHomepage":"返回主頁"
+"label.backHomepage":"返回主頁",
+"label.askItem":"點擊我諮詢貨品"
 }

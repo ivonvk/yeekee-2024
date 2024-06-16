@@ -118,12 +118,16 @@ const ItemPageSection: React.FC<ItemPageSectionProps> = ({}) => {
               </div>
               <CommonLabel text={targetItem.name_zh ?? "-"} />
             </div>
+         
             <div className={sectionStyles.row}>
               <div className={sectionStyles.label}>
                 <CommonLabel text={t(`label.description`)} />
               </div>
               <CommonLabel text={targetItem.name_zh ?? "-"} />
             </div>
+              {/* <div className={sectionStyles.labelClick}>
+                {t(`label.askItem`)}
+            </div> */}
             {/* <div className={sectionStyles.row}>
              {targetItem?.other_ids?.split(',')?.map((x)=>{
               return <img alt={x}className={styles.smallImg} src={renderImgById(x)}></img>

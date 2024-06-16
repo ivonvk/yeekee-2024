@@ -5,6 +5,14 @@
   width: 220px;
   text-align: left;
 }
+.labelClick{
+  width: 300px;
+  text-align: left;
+  margin-top: 12px;
+  margin-bottom: 12px;
+  font-size: 36px;
+  font-weight: bold
+}
 .row {
   display: flex;
   flex-direction: row;
@@ -77,7 +85,14 @@
 @media screen and (max-width: 997px) {
   .label{text-align: center;
   }
-
+  .labelClick{
+    width: 300px;
+    text-align: center;
+    margin-top: 12px;
+    margin-bottom: 12px;
+    font-size: 36px;
+    font-weight: bold
+  }
   .mainImg {
     display: flex;
     height: 100%;
