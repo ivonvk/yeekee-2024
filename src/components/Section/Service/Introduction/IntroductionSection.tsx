@@ -1,9 +1,10 @@
-import React, { useEffect } from "react";
-import styles from "../SectionCommon.module.scss";
-import sectionStyles from "../Service/IntroductionSection.module.scss";
-import InnerSection from "../InnerSection";
-import InfoBox from "../../Display/InfoBox";
-import { payment, serviceInfos } from "../../../constant/text/services";
+import React from "react";
+import styles from "../../SectionCommon.module.scss";
+
+import sectionStyles from "./IntroductionSection.module.scss";
+import InnerSection from "../../InnerSection";
+import InfoBox from "../../../Display/InfoBox";
+import { payment, serviceInfos } from "../../../../constant/text/services";
 import { useTranslation } from "react-i18next";
 
 

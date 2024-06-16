@@ -1,9 +1,9 @@
-import React, { useEffect } from "react";
-import styles from "../SectionCommon.module.scss";
-import sectionStyles from "../Service/PaymentChannelsSection.module.scss";
-import InnerSection from "../InnerSection";
-import IconBox from "../../Display/IconBox";
-import assets from "../../../assets/img/assets";
+import React from "react";
+import styles from "../../SectionCommon.module.scss";
+import sectionStyles from "./PaymentChannelsSection.module.scss";
+import InnerSection from "../../InnerSection";
+import IconBox from "../../../Display/IconBox";
+import assets from "../../../../assets/img/assets";
 import { useTranslation } from "react-i18next";
 
 

@@ -9,7 +9,7 @@ import { PagesType } from "../../types/pages";
 import Footer from "../../components/Footers/Footer";
 import ThemeSection from "../../components/Section/ThemeSection";
 import { useTranslation } from "react-i18next";
-import ItemListSection from "../../components/Section/Home/ItemListSection";
+import ItemListSection from "../../components/Section/Home/ItemList/ItemListSection";
 
 interface HomeProps {}
 const Home: NextPage<HomeProps> = ({}) => {
@@ -28,9 +28,7 @@ const Home: NextPage<HomeProps> = ({}) => {
       <section
         id="home"
         className={
-          pagesContext.pages === PagesType.homepage
-            ? styles.sectionHome
-            : styles.nonDisplay
+      styles.sectionHome
         }
       >
         <ThemeSection>

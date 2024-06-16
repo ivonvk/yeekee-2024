@@ -2,10 +2,10 @@ import type { NextPage } from "next";
 
 import { useEffect } from "react";
 import styles from "../../styles/main.module.scss";
-import HardwareRecyclingSection from "../../components/Section/Service/HardwareRecyclingSection";
+import HardwareRecyclingSection from "../../components/Section/Service/HardwareRecycling/HardwareRecyclingSection";
 import ProductListSection from "../../components/Section/Service/ProductListSection";
-import CustomizationServiceSection from "../../components/Section/Service/CustomizationServiceSection";
-import PaymentChannelsSection from "../../components/Section/Service/PaymentChannelsSection";
+import CustomizationServiceSection from "../../components/Section/Service/CustomizationService/CustomizationServiceSection";
+import PaymentChannelsSection from "../../components/Section/Service/PaymentChannels/PaymentChannelsSection";
 import Header from "../../components/Navbars/Header";
 import { SEO } from "../../components/seo";
 import { usePages } from "../../contexts/pages/use-pages";

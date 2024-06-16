@@ -1,0 +1,46 @@
+.sectionLabel {
+  color: rgba(37, 37, 37, 1);
+  font-family: "PingFangTC-Semibold";
+  font-size: calc(20px + var(--font-size));
+  font-weight: 600;
+  font-style: Semibold;
+  letter-spacing: 1.25px;
+  text-align: left;
+  line-height: 32px;
+  margin-top: 32px;
+  margin-bottom: 32px;
+}
+.greenLine {
+  background-color: rgb(34, 102, 0);
+  height: 1px;
+  flex: 1;
+}
+.greenCircle {
+  width: 8px;
+  height: 8px;
+  border-radius: 24px;
+  background-color: rgb(34, 102, 0);
+}
+.greenBox {
+  flex-direction: row;
+  display: flex;
+  align-items: center;
+  flex: 1;
+}
+.titleBox {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  align-items: center;
+}
+.title {
+  opacity: 1;
+  color: rgba(34, 102, 0, 1);
+  font-family: "PingFangTC-Semibold";
+  font-size: calc(22px + var(--font-size));
+  font-weight: 600;
+  font-style: Semibold;
+  letter-spacing: 1.38px;
+  text-align: left;
+  margin-right: 10px;
+}

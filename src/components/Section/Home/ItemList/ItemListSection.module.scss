@@ -40,7 +40,7 @@
   width:  40%;
   padding: 20px;
   object-fit: cover;
- // cursor: pointer;
+  cursor: pointer;
 }
 .imgBoxColumm{
   display: flex;
@@ -57,11 +57,7 @@
 
 }
 @media screen and (max-width: 997px) {
-  .imgBoxRow{
 
-    align-items: center;
-  
-  }
   .bottomBox {
     display: flex;
     flex-direction: column;
@@ -92,7 +88,10 @@
     padding-left: 12px;
     padding-right: 12px;
   }
+
   .imgBoxRow{
+    align-items: center;
+
     flex-direction: column;
   }
   .img{

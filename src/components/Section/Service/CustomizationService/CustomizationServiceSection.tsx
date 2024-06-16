@@ -1,9 +1,8 @@
-import React, { useEffect } from "react";
-import { useIntl } from "react-intl";
-import styles from "../SectionCommon.module.scss";
-import sectionStyles from "../Service/CustomizationServiceSection.module.scss";
-import InnerSection from "../InnerSection";
-import InfoBox from "../../Display/InfoBox";
+import React from "react";
+import styles from "../../SectionCommon.module.scss";
+import sectionStyles from "./CustomizationServiceSection.module.scss";
+import InnerSection from "../../InnerSection";
+import InfoBox from "../../../Display/InfoBox";
 import { useTranslation } from "react-i18next";
 
 

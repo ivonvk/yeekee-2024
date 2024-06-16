@@ -1,7 +1,8 @@
 import React from "react";
-import styles from "../SectionCommon.module.scss";
-import sectionStyles from "../Service/HardwareRecyclingSection.module.scss";
-import InnerSection from "../InnerSection";
+import styles from "../../SectionCommon.module.scss";
+
+import sectionStyles from "./HardwareRecyclingSection.module.scss";
+import InnerSection from "../../InnerSection";
 import { useTranslation } from "react-i18next";
 
 interface HardwareRecyclingSectionProps {}

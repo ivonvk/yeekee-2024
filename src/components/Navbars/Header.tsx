@@ -21,25 +21,19 @@ const Header: React.FC<HeaderProps> = ({ scrollTransparent }) => {
   const [collapseOpen, setCollapseOpen] = React.useState(false);
   const [isClosing, setIsClosing] = React.useState(false);
   const [isTransparent, setIsTransparent] = React.useState(scrollTransparent);
-
   const pagesContext = usePages();
+  useEffect(() => {}, [pagesContext.pages]);
   useEffect(() => {
-
-    
-
-
-  }, [pagesContext.pages]);
-useEffect(() => {
     const handleWindowResize = () => {
       const root = document.documentElement;
-      root.style.setProperty('--window-width', `${window.innerWidth}px`);
+      root.style.setProperty("--window-width", `${window.innerWidth}px`);
     };
 
-    window.addEventListener('resize', handleWindowResize);
+    window.addEventListener("resize", handleWindowResize);
     handleWindowResize();
 
     return () => {
-      window.removeEventListener('resize', handleWindowResize);
+      window.removeEventListener("resize", handleWindowResize);
     };
   }, []);
 
@@ -82,11 +76,7 @@ useEffect(() => {
       <Link href={href} passHref legacyBehavior>
         <div className={styles.smalContainer}>
           <div className={styles.forceHeight}>
-            <a
-              className={styles.link}
-              onClick={() => {
-              }}
-            >
+            <a className={styles.link} onClick={() => {}}>
               {t(`menu.${page}`)}
             </a>
           </div>
@@ -103,25 +93,23 @@ useEffect(() => {
   };
   const renderScrollPageBtn = (page: PagesType, href: string) => {
     return (
-        <div className={styles.smalContainer}>
-          <div className={styles.forceHeight}>
-            <a
-              className={styles.link}
-              onClick={() => {
-                window.scrollTo(0, document.documentElement.scrollHeight);
-              }}
-            >
-              {t(`menu.${page}`)}
-            </a>
-          </div>
-          <div
-            className={
-              pagesContext.pages === page
-                ? styles.underline
-                : styles.nonUnderline
-            }
-          ></div>
+      <div className={styles.smalContainer}>
+        <div className={styles.forceHeight}>
+          <a
+            className={styles.link}
+            onClick={() => {
+              window.scrollTo(0, document.documentElement.scrollHeight);
+            }}
+          >
+            {t(`menu.${page}`)}
+          </a>
         </div>
+        <div
+          className={
+            pagesContext.pages === page ? styles.underline : styles.nonUnderline
+          }
+        ></div>
+      </div>
     );
   };
   return (
@@ -131,37 +119,39 @@ useEffect(() => {
           !isTransparent || collapseOpen || isClosing ? styles.raised : ""
         }`}
       >
-          <div className={styles.wrapper}>
-            <div className={styles.bottomIcon} >
-              <div
-                className={`${styles.menusContainer} ${
-                  collapseOpen || isClosing ? styles.hideMenu : ""
-                }`}
-              >
-                {renderBtns(PagesType.homepage, `/${locale}/homepage`)}
-                {renderBtns(PagesType.service, `/${locale}/service`)}
-                {renderScrollPageBtn(PagesType.contact_us, `/${locale}/contact_us`)}
-              </div>
-              <button
-                role="button"
-                className={`${styles.menuButton} ${
-                  collapseOpen ? styles.collapsed : ""
-                }`}
-                onClick={toggleMenu}
-              >
-                <div
-                  className={`${styles.hamburger} ${
-                    collapseOpen ? styles.close : ""
-                  }`}
-                >
-                  <div />
-                  <div />
-                  <div />
-                </div>
-              </button>
+        <div className={styles.wrapper}>
+          <div className={styles.bottomIcon}>
+            <div
+              className={`${styles.menusContainer} ${
+                collapseOpen || isClosing ? styles.hideMenu : ""
+              }`}
+            >
+              {renderBtns(PagesType.homepage, `/${locale}/homepage`)}
+              {renderBtns(PagesType.service, `/${locale}/service`)}
+              {renderScrollPageBtn(
+                PagesType.contact_us,
+                `/${locale}/contact_us`
+              )}
             </div>
-        
+            <button
+              role="button"
+              className={`${styles.menuButton} ${
+                collapseOpen ? styles.collapsed : ""
+              }`}
+              onClick={toggleMenu}
+            >
+              <div
+                className={`${styles.hamburger} ${
+                  collapseOpen ? styles.close : ""
+                }`}
+              >
+                <div />
+                <div />
+                <div />
+              </div>
+            </button>
           </div>
+        </div>
       </div>
       <Menu open={isClosing ? false : collapseOpen} toggleMenu={toggleMenu} />
     </>
