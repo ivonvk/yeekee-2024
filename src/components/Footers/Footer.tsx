@@ -1,9 +1,6 @@
 /*eslint-disable*/
-import { useRouter } from "next/router";
 
-import { Container } from "react-bootstrap";
 import { useEffect } from "react";
-import { useIntl } from "react-intl";
 import styles from "./Footer.module.scss";
 import assets from "../../assets/img/assets";
 import { googleMapLink } from "../../constant/link";
@@ -15,8 +12,6 @@ const Footer = () => {
   const { t } = useTranslation();
 
 
-  const router = useRouter();
-  const { locale, defaultLocale } = router;
   useEffect(() => {
     const handleWindowResize = () => {
       const root = document.documentElement;

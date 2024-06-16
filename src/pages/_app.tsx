@@ -1,4 +1,3 @@
-import type { AppProps } from "next/app";
 import { useRouter } from "next/router";
 import { useEffect } from "react";
 import { SSRProvider } from "@react-aria/ssr";

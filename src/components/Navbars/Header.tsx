@@ -1,11 +1,9 @@
 import Link from "next/link";
 import { useRouter } from "next/router";
 import React, { useEffect } from "react";
-import { Container } from "react-bootstrap";
 
 import styles from "./Header.module.scss";
 import Menu from "./Menu";
-import { useIntl } from "react-intl";
 import { usePages } from "../../contexts/pages/use-pages";
 import { PagesType } from "../../types/pages";
 import { useTranslation } from "react-i18next";
@@ -133,7 +131,6 @@ useEffect(() => {
           !isTransparent || collapseOpen || isClosing ? styles.raised : ""
         }`}
       >
-        <Container >
           <div className={styles.wrapper}>
             <div className={styles.bottomIcon} >
               <div
@@ -165,7 +162,6 @@ useEffect(() => {
             </div>
         
           </div>
-        </Container>
       </div>
       <Menu open={isClosing ? false : collapseOpen} toggleMenu={toggleMenu} />
     </>
