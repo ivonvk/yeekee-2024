@@ -21,7 +21,6 @@ const ItemPage: NextPage<ItemPageProps> = ({}) => {
   }, []);
   return (
     <>
-      <SEO title={t("seo.title_long")} description={t("seo.description")} />
 
       <Header scrollTransparent />
 

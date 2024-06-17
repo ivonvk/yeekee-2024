@@ -23,7 +23,6 @@ const Home: NextPage<HomeProps> = ({}) => {
   }, []);
   return (
     <>
-      <SEO title={t("seo.title_long")} description={t("seo.description")} />
       <Header scrollTransparent />
       <section
         id="service"

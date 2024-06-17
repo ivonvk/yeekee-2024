@@ -22,6 +22,7 @@ export const SEO: React.FC<SeoProps> = ({
     <title>{title}</title>
     <meta name="google-site-verification" content="sDFkCzxvY3ztmNbp5BrQU5An8fnuhQnwPAXMmsxpVzs" />
     <meta name="description" content={description} />
+    <meta name="keywords" content="義記膠鐵桶買賣, 桶類用途改造, 膠鐵桶回收, 新界屯門康寶路, 義記陳, 新界九龍香港"/>
     <meta
       name="viewport"
       content="width=device-width,maximum-scale=1,initial-scale=1"
@@ -33,7 +34,7 @@ export const SEO: React.FC<SeoProps> = ({
       property="og:description"
       content={description}
     />
-    <meta property="og:site_name" content="Hero Plus" />
+    <meta property="og:site_name" content="義記功能膠鐵桶" />
     <meta property="og:url" content={`${canonical}`} />
     <meta name="twitter:card" content="summary" />
     <meta name="twitter:title" content={title} />

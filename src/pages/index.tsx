@@ -23,6 +23,7 @@ const Home: NextPage<HomeProps> = ({}) => {
       <SEO
         title={t("seo.title_long")}
         description={t("seo.description")}
+        canonical="https://yk-ee.hk"
       />
      
       
