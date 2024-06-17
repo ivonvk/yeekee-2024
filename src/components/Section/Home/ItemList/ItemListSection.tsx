@@ -6,6 +6,8 @@ import { useTranslation } from "react-i18next";
 import items_array from "../../../../assets/items/items_array";
 import { useRouter } from "next/router";
 import ItemModel from "../../../../types/model/ItemModel";
+import { ItemCategory } from "../../../../types/item";
+const item_description = require("../../../../assets/item_description.csv");
 
 interface ItemListSectionProps {}
 
@@ -13,33 +15,31 @@ const ItemListSection: React.FC<ItemListSectionProps> = ({}) => {
   const { t } = useTranslation();
   const router = useRouter();
   const { locale } = useRouter();
+  const [allItems, setAllItems] = useState([] as ItemModel[]);
+  const [currentCategory, setCurrentCategory] = useState(ItemCategory.Item1_10);
 
-  const renderItemArray = () => {
-    var array = [] as any[];
+  useEffect(() => {
+    setAllItems(item_description as ItemModel[]);
+  }, []);
+
+  const rednerTab = () => {
     var items = [] as any[];
-
-    const getId = (item:any)=>{
-      var temp = item.split("/").find((x:string)=>x.includes("IMG"))
-      var id = temp.toString().split(".")[0].toString()
-      return id
-    }
+    var array = [] as any[];
+    var count = 0;
+    Object.entries(ItemCategory).map((x: any,index) => {
+    
 
 
-    items_array.map(async (item, index) => {
-      if (index % 3 === 2 || index === items_array.length - 1) {
+      if (count % 3 === 2 || index ===  Object.entries(ItemCategory).length - 1) {
         items.push(
-          <div className={sectionStyles.imgBox}>
-          <img
-            alt={item}
-            onClick={() => {
-              router.push({ pathname: `/homepage/item_page`, query: { id:getId(item) } });
-            }}
-            src={item}
-            className={sectionStyles.img}
-            key={index}
-          ></img>
-          <div className={sectionStyles.text}>{new ItemModel({ ...items.find((x) => x?.id?.includes(getId(item) as any)) }).name_zh??"-"}</div>
-          </div>
+          <div
+          className={sectionStyles.text}
+          onClick={() => {
+            setCurrentCategory(x[1] as ItemCategory);
+          }}
+        >
+          {x[1].toString()}
+        </div>
         );
 
         array.push(
@@ -48,21 +48,105 @@ const ItemListSection: React.FC<ItemListSectionProps> = ({}) => {
           </div>
         );
         items = [];
+        count=0;
+
       } else {
+        count+=1;
         items.push(
-          <div className={sectionStyles.imgBox}>
-          <img
-          alt={item}
-            onClick={() => {
-              router.push({ pathname: `/homepage/item_page`, query: { id: getId(item) } });
-            }}
-            src={item}
-            className={sectionStyles.img}
-            key={index}
-          ></img>
-          <div className={sectionStyles.text}>{new ItemModel({ ...items.find((x) => x?.id?.includes(getId(item) as any)) }).name_zh??"-"}</div>
-          </div>
+          <div
+          className={sectionStyles.text}
+          onClick={() => {
+            setCurrentCategory(x[1] as ItemCategory);
+          }}
+        >
+          {x[1].toString()}
+        </div>
         );
+      }
+
+
+
+
+
+    });
+
+    return <div className={sectionStyles.imgBoxColumm}>{array}</div>;
+  };
+
+  const renderItemArray = () => {
+    var array = [] as any[];
+    var items = [] as any[];
+var count = 0;
+    const getId = (item: any) => {
+      var temp = item.split("/").find((x: string) => x.includes("IMG"));
+      var id = temp.toString().split(".")[0].toString();
+      return id;
+    };
+
+    items_array.map(async (item, index) => {
+      if (
+        new ItemModel({ ...allItems.find((x) => x?.id?.includes(getId(item))) })
+          .category === currentCategory
+      ) {
+        if (count % 3 === 2 || index === items_array.length - 1) {
+          items.push(
+            <div
+              className={sectionStyles.imgBox}
+              onClick={() => {
+                router.push({
+                  pathname: `/homepage/item_page`,
+                  query: { id: getId(item) },
+                });
+              }}
+            >
+              <img
+                alt={item}
+                src={item}
+                className={sectionStyles.img}
+                key={index}
+              ></img>
+              <div className={sectionStyles.text}>
+                {new ItemModel({
+                  ...allItems.find((x) => x?.id?.includes(getId(item))),
+                }).name_zh ?? "-"}
+              </div>
+            </div>
+          );
+
+          array.push(
+            <div className={sectionStyles.imgBoxRow} key={"array_" + index}>
+              {items}
+            </div>
+          );
+          items = [];
+          count=0;
+
+        } else {
+          count+=1
+          items.push(
+            <div
+              className={sectionStyles.imgBox}
+              onClick={() => {
+                router.push({
+                  pathname: `/homepage/item_page`,
+                  query: { id: getId(item) },
+                });
+              }}
+            >
+              <img
+                alt={item}
+                src={item}
+                className={sectionStyles.img}
+                key={index}
+              ></img>
+              <div className={sectionStyles.text}>
+                {new ItemModel({
+                  ...allItems.find((x) => x?.id?.includes(getId(item))),
+                }).name_zh ?? "-"}
+              </div>
+            </div>
+          );
+        }
       }
     });
     return <div className={sectionStyles.imgBoxColumm}>{array}</div>;
@@ -75,7 +159,7 @@ const ItemListSection: React.FC<ItemListSectionProps> = ({}) => {
           <div className={styles.shortDescription}>
             {t(`homepage.service.shortDescription`)}
           </div>
-
+          {rednerTab()}
           {renderItemArray()}
         </div>
       </div>

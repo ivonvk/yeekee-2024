@@ -1,4 +1,4 @@
-import { Item } from "../item";
+import { Item, ItemCategory } from "../item";
 
 export default class ItemModel implements Item {
   id?: string;
@@ -6,6 +6,7 @@ export default class ItemModel implements Item {
   name_en?: string;
   name_cn?: string;
   description?: string;
+  category?:ItemCategory;
   other_ids?: string;
   
   constructor(model?: Item) {
@@ -15,6 +16,7 @@ export default class ItemModel implements Item {
     this.name_en = model?.name_en;
     this.name_cn = model?.name_cn;
     this.description = model?.description;
+    this.category = model?.category;
     this.other_ids = model?.other_ids;
 
   }
