@@ -7,6 +7,14 @@ import { PagesType } from "../types/pages";
 import router, { useRouter } from "next/router";
 import { useTranslation } from "react-i18next";
 
+
+
+import styles from "../styles/main.module.scss";
+import Header from "../components/Navbars/Header";
+import Footer from "../components/Footers/Footer";
+import ItemListSection from "../components/Section/Home/ItemList/ItemListSection";
+import ThemeSection from "../components/Section/ThemeSection";
+
 interface HomeProps {
 }
 const Home: NextPage<HomeProps> = ({}) => {
@@ -16,7 +24,7 @@ const Home: NextPage<HomeProps> = ({}) => {
   const pagesContext = usePages();
   useEffect(()=>{
     pagesContext.setPages(PagesType.homepage)
-    router.push(`/${locale}/homepage`)
+  //  router.push(`/${locale}/homepage`)
   },[])
   return (
     <>
@@ -27,7 +35,19 @@ const Home: NextPage<HomeProps> = ({}) => {
       />
      
       
-  
+     <Header scrollTransparent />
+
+<section
+  id="home"
+  className={
+styles.sectionHome
+  }
+>
+  <ThemeSection>
+    <ItemListSection/>
+    <Footer />
+  </ThemeSection>
+</section>
     </>
   );
 };

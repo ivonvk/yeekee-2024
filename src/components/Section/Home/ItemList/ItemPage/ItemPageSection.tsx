@@ -94,7 +94,8 @@ var count = 1
       <div className={`${styles.title} ${sectionStyles.back}`}
                  onClick={()=>{
                   router.push({
-                    pathname: `/homepage`
+                 //   pathname: `/homepage`
+                    pathname: `/`
                   });
                 }}
            >{t(`label.backHomepage`)}</div>

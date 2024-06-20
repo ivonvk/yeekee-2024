@@ -126,7 +126,7 @@ const Header: React.FC<HeaderProps> = ({ scrollTransparent }) => {
                 collapseOpen || isClosing ? styles.hideMenu : ""
               }`}
             >
-              {renderBtns(PagesType.homepage, `/${locale}/homepage`)}
+              {renderBtns(PagesType.homepage, `/${locale}/`)}
               {renderBtns(PagesType.service, `/${locale}/service`)}
               {renderScrollPageBtn(
                 PagesType.contact_us,
