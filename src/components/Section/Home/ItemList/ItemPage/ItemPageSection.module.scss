@@ -5,6 +5,11 @@
   width: 220px;
   text-align: left;
 }
+.labelStyle{
+  width: 100%;
+  text-align: left;
+  font-weight: bold;
+}
 .labelClick{
   width: 300px;
   text-align: left;
@@ -16,6 +21,7 @@
 .row {
   display: flex;
   flex-direction: row;
+
   width: 100%;
 }
 .box {
@@ -39,7 +45,7 @@
 .img {
   min-width: 50px;
   width: 100%;
-  object-fit: cover;
+  object-fit: contain;
   cursor: pointer;
   margin-left: 6px;
   margin-right: 6px;

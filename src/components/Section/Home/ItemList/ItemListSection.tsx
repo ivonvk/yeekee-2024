@@ -16,7 +16,7 @@ const ItemListSection: React.FC<ItemListSectionProps> = ({}) => {
   const router = useRouter();
   const { locale } = useRouter();
   const [allItems, setAllItems] = useState([] as ItemModel[]);
-  const [currentCategory, setCurrentCategory] = useState(ItemCategory.Item1_10);
+  const [currentCategory, setCurrentCategory] = useState(ItemCategory.L200);
 
   useEffect(() => {
     setAllItems(item_description as ItemModel[]);
@@ -76,7 +76,7 @@ const ItemListSection: React.FC<ItemListSectionProps> = ({}) => {
   const renderItemArray = () => {
     var array = [] as any[];
     var items = [] as any[];
-var count = 0;
+var count = 1;
     const getId = (item: any) => {
       var temp = item.split("/").find((x: string) => x.includes("IMG"));
       var id = temp.toString().split(".")[0].toString();
@@ -88,7 +88,8 @@ var count = 0;
         new ItemModel({ ...allItems.find((x) => x?.id?.includes(getId(item))) })
           .category === currentCategory
       ) {
-        if (count % 3 === 2 || index === items_array.length - 1) {
+        count+=1
+        if (count% 3===0 || index === items_array.length - 1) {
           items.push(
             <div
               className={sectionStyles.imgBox}
@@ -119,10 +120,8 @@ var count = 0;
             </div>
           );
           items = [];
-          count=0;
 
         } else {
-          count+=1
           items.push(
             <div
               className={sectionStyles.imgBox}

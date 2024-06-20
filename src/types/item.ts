@@ -11,9 +11,6 @@ export interface Item {
 }
 
 export enum ItemCategory{
-  Item1_10="Item1_10",
-  Item1_19="Item1_19",
-  Item1_29="Item1_29",
-  Item1_39="Item1_39",
-  Item1_49="Item1_49",
+  L200="200L",
+  L150="150L"
 }

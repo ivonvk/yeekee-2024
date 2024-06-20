@@ -39,15 +39,15 @@ const ItemPageSection: React.FC<ItemPageSectionProps> = ({}) => {
   const renderItemArray = () => {
     var array = [] as any[];
     var items = [] as any[];
-
+var count = 1
     const getId = (item: any) => {
       var temp = item.split("/").find((x: string) => x.includes("IMG"));
       var id = temp.toString().split(".")[0].toString();
       return id;
     };
-
     targetItem.other_ids?.split(",").map(async (item, index) => {
-      if (index % 5 === 4 || index === items_array.length - 1) {
+      count+=1
+      if (count %5 === 0 || (targetItem.other_ids&&index === targetItem.other_ids?.split(",").length - 1)) {
         items.push(
           <img
             alt={item}
@@ -113,17 +113,17 @@ const ItemPageSection: React.FC<ItemPageSectionProps> = ({}) => {
           
           <div className={sectionStyles.infoBox}>
             <div className={sectionStyles.row}>
-              <div className={sectionStyles.label}>
+              <div className={sectionStyles.labelStyle}>
                 <CommonLabel text={t(`label.name`)} />
               </div>
               <CommonLabel text={targetItem.name_zh ?? "-"} />
             </div>
          
             <div className={sectionStyles.row}>
-              <div className={sectionStyles.label}>
+              <div className={sectionStyles.labelStyle}>
                 <CommonLabel text={t(`label.description`)} />
               </div>
-              <CommonLabel text={targetItem.name_zh ?? "-"} />
+              <CommonLabel text={targetItem.description ?? "-"} />
             </div>
               {/* <div className={sectionStyles.labelClick}>
                 {t(`label.askItem`)}
@@ -134,7 +134,14 @@ const ItemPageSection: React.FC<ItemPageSectionProps> = ({}) => {
              })}
              <img className={styles.smallImg}></img>
             </div> */}
+                
+                <div className={sectionStyles.row}>
+              <div className={sectionStyles.labelStyle}>
                 <CommonLabel text={t(`label.otherImgs`)} />
+              </div>
+            </div>
+
+
             {renderItemArray()}
           </div>
         </div>
