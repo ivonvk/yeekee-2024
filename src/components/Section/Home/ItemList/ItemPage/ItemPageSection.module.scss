@@ -43,10 +43,19 @@
  cursor: pointer;
 }
 .img {
-  min-width: 50px;
+  min-width:70px;
+height: 100%;
   width: 100%;
   object-fit: contain;
   cursor: pointer;
+  margin-left: 6px;
+  margin-right: 6px;
+}
+.imgNull{
+  min-width: 70px;
+height: 100%;
+  width: 100%;
+  object-fit: contain;
   margin-left: 6px;
   margin-right: 6px;
 }
@@ -76,7 +85,7 @@
   flex-direction: row;
   margin-left: 10px;
   margin-right: 10px;
-  justify-content: space-between;
+  align-items: flex-start;
   width: 100%;
   margin-bottom: 12px;
 }

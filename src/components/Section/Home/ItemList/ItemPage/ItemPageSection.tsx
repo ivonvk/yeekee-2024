@@ -8,6 +8,7 @@ import ItemModel from "../../../../../types/model/ItemModel";
 import items_array from "../../../../../assets/items/items_array";
 import CommonLabel from "../../../../Label/CommonLabel";
 import ImageModal from "../../../../Modal/ImageModal";
+import { getLastCharNumber } from "../../../../../utils/getData";
 const item_description = require("../../../../../assets/item_description.csv");
 interface ItemPageSectionProps {}
 
@@ -82,11 +83,24 @@ const ItemPageSection: React.FC<ItemPageSectionProps> = ({}) => {
             ></img>
           );
         }
+        var temp_count =getLastCharNumber(temp_items?.length?.toString())
+
+        if(temp_items?.length<4&&temp_count){
+          for(let i =0;i<3;i++){
+            temp_items.push(<div
+          
+              className={sectionStyles.imgNull}
+              key={index}
+            ></div>)
+          }
+        }
           array.push(
             <div className={sectionStyles.imgBoxRow} key={"array_" + index}>
               {temp_items}
             </div>
           );
+          var temp_count =getLastCharNumber(array?.length?.toString())
+         
           temp_items = [];
         } else if(item&&item!==''&&item!=="undefined") {
           temp_items.push(
@@ -105,6 +119,10 @@ const ItemPageSection: React.FC<ItemPageSectionProps> = ({}) => {
           );
         }
       });
+
+    
+      
+
     return <div className={sectionStyles.imgBoxColumm}>{array}</div>;
   };
   return (

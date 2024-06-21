@@ -21,3 +21,14 @@ export const convertCsvToObjectArray = (csvData:string) => {
       return str;
     }
   };
+
+  export const getLastCharNumber=(str:string) =>{
+    const lastChar = str.charAt(str.length - 1);
+    const lastCharNum = parseInt(lastChar, 10);
+  
+    if (isNaN(lastCharNum)) {
+      return null; // Return null if the last character is not a number
+    } else {
+      return lastCharNum;
+    }
+  }
