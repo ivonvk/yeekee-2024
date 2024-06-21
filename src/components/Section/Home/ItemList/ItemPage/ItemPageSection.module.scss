@@ -43,25 +43,21 @@
  cursor: pointer;
 }
 .img {
-  min-width:70px;
-height: 100%;
-  width: 100%;
-  object-fit: contain;
+  width: 25%;
+  object-fit: cover;
   cursor: pointer;
   margin-left: 6px;
-  margin-right: 6px;
+  margin-right: 6px;height: auto;
 }
 .imgNull{
-  min-width: 70px;
-height: 100%;
-  width: 100%;
-  object-fit: contain;
+  width: 25%;height: auto;
   margin-left: 6px;
   margin-right: 6px;
 }
 
 .infoBox {
   margin-left: 40px;
+  margin-right: 40px;
   width: 100%;
   height: 100%;
   display: flex;
@@ -78,6 +74,7 @@ height: 100%;
   flex-direction: column;
   margin-bottom: 20px;
   margin-top: 12px;
+  width: 100%;
 
 }
 .imgBoxRow {
@@ -140,7 +137,7 @@ margin-right:0px;
   }
   .img {
     display: flex;
-    height: 500px;
+    max-height: 300px;
 margin-bottom: 12px;
     width: 100%;
 
@@ -154,7 +151,7 @@ margin-bottom: 12px;
   .infoBox {
     margin-top: 48px;
 
-    margin-left: 0px;
+    margin-left: 48px;
     width: 100%;
     height: 100%;
     display: flex;

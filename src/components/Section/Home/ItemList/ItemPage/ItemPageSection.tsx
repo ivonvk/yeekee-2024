@@ -57,7 +57,6 @@ const ItemPageSection: React.FC<ItemPageSectionProps> = ({}) => {
       var id = temp?.toString()?.split(".")?.[0]?.toString();
       return id;
     };
-    console.log();
     items &&
       targetItem &&
       targetItem?.other_ids?.split(",")?.map(async (item, index) => {
