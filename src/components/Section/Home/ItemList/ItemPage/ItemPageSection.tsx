@@ -4,9 +4,6 @@ import sectionStyles from "./ItemPageSection.module.scss";
 import InnerSection from "../../../InnerSection";
 import { useTranslation } from "react-i18next";
 import { useRouter } from "next/router";
-
-import { convertCsvToObjectArray } from "../../../../../utils/getData";
-import { usePapaParse } from "react-papaparse";
 import ItemModel from "../../../../../types/model/ItemModel";
 import items_array from "../../../../../assets/items/items_array";
 import CommonLabel from "../../../../Label/CommonLabel";
@@ -21,13 +18,27 @@ const ItemPageSection: React.FC<ItemPageSectionProps> = ({}) => {
   const [items, setItems] = useState([] as ItemModel[]);
   const [targetItem, setTargetItem] = useState({} as ItemModel);
   const [openModal, setOpenModal] = useState(false);
+
   useEffect(() => {
     setItems(item_description as ItemModel[]);
   }, [id]);
   useEffect(() => {
-    setTargetItem(
-      new ItemModel({ ...items.find((x) => x?.id?.includes(id as any)) })
-    );
+    var temp = new ItemModel({
+      ...items.find((x) => x?.id?.includes(id as any)),
+    });
+
+    if (temp.other_ids?.length !== 0) {
+      temp.other_ids += ",";
+    }
+    items?.map((x: ItemModel, index) => {
+      if (
+        x?.other_ids?.toString()?.includes(id as any) &&
+        !temp.other_ids?.includes(x?.id as any)
+      ) {
+        temp.other_ids += (x?.id as any) + (index === items?.length ? "" : ",");
+      }
+    });
+    setTargetItem(temp);
   }, [id, items]);
 
   const renderImg = () => {
@@ -38,71 +49,79 @@ const ItemPageSection: React.FC<ItemPageSectionProps> = ({}) => {
   };
   const renderItemArray = () => {
     var array = [] as any[];
-    var items = [] as any[];
-var count = 1
+    var temp_items = [] as any[];
+    var count = 1;
     const getId = (item: any) => {
       var temp = item.split("/").find((x: string) => x.includes("IMG"));
-      var id = temp.toString().split(".")[0].toString();
+      var id = temp?.toString()?.split(".")?.[0]?.toString();
       return id;
     };
-    targetItem.other_ids?.split(",").map(async (item, index) => {
-      count+=1
-      if (count %5 === 0 || (targetItem.other_ids&&index === targetItem.other_ids?.split(",").length - 1)) {
-        items.push(
-          <img
-            alt={item}
-            onClick={() => {
-              router.push({
-                pathname: `/homepage/item_page`,
-                query: { id: getId(item) },
-              });
-            }}
-            src={renderImgById(item)}
-            className={sectionStyles.img}
-            key={index}
-          ></img>
-        );
-
-        array.push(
-          <div className={sectionStyles.imgBoxRow} key={"array_" + index}>
-            {items}
-          </div>
-        );
-        items = [];
-      } else {
-        items.push(
-          <img
-            alt={item}
-            onClick={() => {
-              router.push({
-                pathname: `/homepage/item_page`,
-                query: { id: getId(item) },
-              });
-            }}
-            src={renderImgById(item)}
-            className={sectionStyles.img}
-            key={index}
-          ></img>
-        );
-      }
-    });
+    console.log();
+    items &&
+      targetItem &&
+      targetItem?.other_ids?.split(",")?.map(async (item, index) => {
+        count += 1;
+        if (
+          (count % 5 === 0 ||
+          (targetItem?.other_ids &&
+            index === targetItem?.other_ids?.split(",")?.length - 1))
+        ) {
+          if(item&&item!==''&&item!=="undefined") {
+          temp_items.push(
+            <img
+              alt={item}
+              onClick={() => {
+                router.push({
+                  pathname: `/homepage/item_page`,
+                  query: { id: getId(item) },
+                });
+              }}
+              src={renderImgById(item)}
+              className={sectionStyles.img}
+              key={index}
+            ></img>
+          );
+        }
+          array.push(
+            <div className={sectionStyles.imgBoxRow} key={"array_" + index}>
+              {temp_items}
+            </div>
+          );
+          temp_items = [];
+        } else if(item&&item!==''&&item!=="undefined") {
+          temp_items.push(
+            <img
+              alt={item}
+              onClick={() => {
+                router.push({
+                  pathname: `/homepage/item_page`,
+                  query: { id: getId(item) },
+                });
+              }}
+              src={renderImgById(item)}
+              className={sectionStyles.img}
+              key={index}
+            ></img>
+          );
+        }
+      });
     return <div className={sectionStyles.imgBoxColumm}>{array}</div>;
   };
   return (
     <InnerSection className={`${styles.container} ${sectionStyles.margin}`}>
       <div className={styles.section}>
-      <div className={`${styles.title} ${sectionStyles.back}`}
-                 onClick={()=>{
-                  router.push({
-                 //   pathname: `/homepage`
-                    pathname: `/`
-                  });
-                }}
-           >{t(`label.backHomepage`)}</div>
+        <div
+          className={`${styles.title} ${sectionStyles.back}`}
+          onClick={() => {
+            router.push({
+              //   pathname: `/homepage`
+              pathname: `/`,
+            });
+          }}
+        >
+          {t(`label.backHomepage`)}
+        </div>
         <div className={sectionStyles.box}>
-          
-        
-       
           <img
             alt={`${id}`}
             onClick={() => {
@@ -111,7 +130,7 @@ var count = 1
             className={sectionStyles.mainImg}
             src={renderImg()}
           />
-          
+
           <div className={sectionStyles.infoBox}>
             <div className={sectionStyles.row}>
               <div className={sectionStyles.labelStyle}>
@@ -119,14 +138,14 @@ var count = 1
               </div>
               <CommonLabel text={targetItem.name_zh ?? "-"} />
             </div>
-         
+
             <div className={sectionStyles.row}>
               <div className={sectionStyles.labelStyle}>
                 <CommonLabel text={t(`label.description`)} />
               </div>
               <CommonLabel text={targetItem.description ?? "-"} />
             </div>
-              {/* <div className={sectionStyles.labelClick}>
+            {/* <div className={sectionStyles.labelClick}>
                 {t(`label.askItem`)}
             </div> */}
             {/* <div className={sectionStyles.row}>
@@ -135,13 +154,12 @@ var count = 1
              })}
              <img className={styles.smallImg}></img>
             </div> */}
-                
-                <div className={sectionStyles.row}>
+
+            <div className={sectionStyles.row}>
               <div className={sectionStyles.labelStyle}>
                 <CommonLabel text={t(`label.otherImgs`)} />
               </div>
             </div>
-
 
             {renderItemArray()}
           </div>

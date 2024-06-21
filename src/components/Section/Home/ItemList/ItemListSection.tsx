@@ -26,101 +26,107 @@ const ItemListSection: React.FC<ItemListSectionProps> = ({}) => {
     var items = [] as any[];
     var array = [] as any[];
     var count = 0;
-    Object.entries(ItemCategory).map((x: any,index) => {
-    
+    var items_count = 0;
+    Object.entries(ItemCategory).map((x: any, index) => {
+      count+=1
+      items_count+=1
+      
+      if (
+        count ===3 ||
+        index === Object.entries(ItemCategory).length - 1
+      ) {
 
-
-      if (count % 3 === 2 || index ===  Object.entries(ItemCategory).length - 1) {
         items.push(
           <div
-          className={sectionStyles.text}
-          onClick={() => {
-            setCurrentCategory(x[1] as ItemCategory);
-          }}
-        >
-          {x[1].toString()}
-        </div>
+            className={sectionStyles.text}
+            onClick={() => {
+              setCurrentCategory(x[1] as ItemCategory);
+            }}
+            key={"items_" + items_count}
+          >
+            {x[1].toString()}
+          </div>
         );
-
         array.push(
-          <div className={sectionStyles.imgBoxRow} key={"array_" + index}>
+          <div
+            className={sectionStyles.imgBoxRow}
+            key={"array_" + items_count}
+
+          >
             {items}
           </div>
         );
         items = [];
-        count=0;
-
+        count = 0;
       } else {
-        count+=1;
+
+        count += 1;
+  
         items.push(
           <div
-          className={sectionStyles.text}
-          onClick={() => {
-            setCurrentCategory(x[1] as ItemCategory);
-          }}
-        >
-          {x[1].toString()}
-        </div>
+          key={"items_" + items_count}
+
+            className={sectionStyles.text}
+            onClick={() => {
+              setCurrentCategory(x[1] as ItemCategory);
+            }}
+          >
+            {x[1].toString()}
+          </div>
         );
       }
-
-
-
-
-
     });
-
-    return <div className={sectionStyles.imgBoxColumm}>{array}</div>;
+    return <div className={sectionStyles.imgBoxColumm} >{array}</div>;
   };
-
+  const renderImgById = (targetId: string) => {
+    return items_array.find((x) => x.includes(targetId));
+  };
   const renderItemArray = () => {
     var array = [] as any[];
     var items = [] as any[];
-var count = 1;
-    const getId = (item: any) => {
-      var temp = item.split("/").find((x: string) => x.includes("IMG"));
-      var id = temp.toString().split(".")[0].toString();
-      return id;
-    };
 
-    items_array.map(async (item, index) => {
-      if (
-        new ItemModel({ ...allItems.find((x) => x?.id?.includes(getId(item))) })
-          .category === currentCategory
-      ) {
-        count+=1
-        if (count% 3===0 || index === items_array.length - 1) {
+    var count = 0;
+
+    var length = item_description?.filter(
+      (y: ItemModel) => y.category === currentCategory
+    )?.length;
+    item_description
+      ?.filter((y: ItemModel) => y.category === currentCategory)
+      .map(async (item: ItemModel, index: number) => {
+        count += 1;
+        if (count === 3 || index === length - 1) {
           items.push(
             <div
               className={sectionStyles.imgBox}
               onClick={() => {
                 router.push({
                   pathname: `/homepage/item_page`,
-                  query: { id: getId(item) },
+                  query: { id: item.id },
                 });
               }}
+              key={"item_" + index}
             >
               <img
-                alt={item}
-                src={item}
+                alt={item?.id ?? ""}
+                src={renderImgById(item?.id ?? "")}
                 className={sectionStyles.img}
                 key={index}
               ></img>
               <div className={sectionStyles.text}>
                 {new ItemModel({
-                  ...allItems.find((x) => x?.id?.includes(getId(item))),
+                  ...allItems.find((x) => x?.id?.includes(item?.id ?? "")),
                 }).name_zh ?? "-"}
               </div>
             </div>
           );
-
           array.push(
-            <div className={sectionStyles.imgBoxRow} key={"array_" + index}>
+            <div 
+            className={sectionStyles.imgBoxRow} key={"array_" + index}>
               {items}
             </div>
           );
           items = [];
-
+          count = 0;
         } else {
           items.push(
             <div
@@ -128,26 +134,27 @@ var count = 1;
               onClick={() => {
                 router.push({
                   pathname: `/homepage/item_page`,
-                  query: { id: getId(item) },
+                  query: { id: item.id },
                 });
               }}
+              key={"item_" + index}
+
             >
               <img
-                alt={item}
-                src={item}
+                alt={item?.id ?? ""}
+                src={renderImgById(item?.id ?? "")}
                 className={sectionStyles.img}
                 key={index}
               ></img>
               <div className={sectionStyles.text}>
                 {new ItemModel({
-                  ...allItems.find((x) => x?.id?.includes(getId(item))),
+                  ...allItems.find((x) => x?.id?.includes(item?.id ?? "")),
                 }).name_zh ?? "-"}
               </div>
             </div>
           );
         }
-      }
-    });
+      });
     return <div className={sectionStyles.imgBoxColumm}>{array}</div>;
   };
   return (

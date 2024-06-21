@@ -38,7 +38,7 @@ const items_array = [
   IMG6.src,
   IMG7.src,
   IMG8.src,
-  IMG9.src,
+  //IMG9.src,
 
 ]
 

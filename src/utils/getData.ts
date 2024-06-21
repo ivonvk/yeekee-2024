@@ -13,3 +13,11 @@ export const convertCsvToObjectArray = (csvData:string) => {
 
     return objectArray
   };
+
+  export const removeLastComma = (str:string) => {
+    if (str.length > 0 && str.charAt(str.length - 1) === ',') {
+      return str.slice(0, -1);
+    } else {
+      return str;
+    }
+  };
