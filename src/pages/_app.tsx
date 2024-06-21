@@ -12,6 +12,7 @@ import { initGA } from "../lib/analytics";
 import { PagesProvider } from "../contexts/pages/use-pages";
 
 import "../../i18n";
+import ScrollToTopBtn from "../components/Button/ScrollToTopBtn";
 const messages: any = {
   "zh-HK": zh_HK
   
@@ -42,6 +43,8 @@ function MyApp({ Component, pageProps }: any) {
       >
         <PagesProvider>
         <Component {...pageProps} />
+        <ScrollToTopBtn/>
+
         </PagesProvider>
       </IntlProvider>
     </SSRProvider>

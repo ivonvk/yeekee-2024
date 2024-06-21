@@ -38,7 +38,7 @@ const ItemListSection: React.FC<ItemListSectionProps> = ({}) => {
 
         items.push(
           <div
-            className={sectionStyles.text}
+            className={sectionStyles.tab}
             onClick={() => {
               setCurrentCategory(x[1] as ItemCategory);
             }}
@@ -66,7 +66,7 @@ const ItemListSection: React.FC<ItemListSectionProps> = ({}) => {
           <div
           key={"items_" + items_count}
 
-            className={sectionStyles.text}
+            className={sectionStyles.tab}
             onClick={() => {
               setCurrentCategory(x[1] as ItemCategory);
             }}
