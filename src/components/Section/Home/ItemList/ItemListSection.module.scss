@@ -103,11 +103,14 @@
   padding-top: 6px;
   background-color: #ffffff;
   cursor: pointer;
-  width: 100%;
-  min-width: 200px;
+  width: calc(var(--window-width) * 0.24);
   margin-left: 12px;
   margin-right: 12px;
- 
+  padding-left: 8px;
+  padding-right: 8px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 @media screen and (max-width: 997px) {
 
@@ -170,6 +173,8 @@
     padding-top: 0px;
     margin-top: 0px;
     margin-bottom: 0px;
+    width: 100%;
+
   }
 
 }
