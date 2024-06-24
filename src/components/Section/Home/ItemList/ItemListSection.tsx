@@ -47,6 +47,7 @@ const ItemListSection: React.FC<ItemListSectionProps> = ({}) => {
             {x[1].toString()}
           </div>
         );
+        
         array.push(
           <div
             className={sectionStyles.imgBoxRow}
@@ -91,7 +92,7 @@ const ItemListSection: React.FC<ItemListSectionProps> = ({}) => {
       (y: ItemModel) => y.category === currentCategory
     )?.length;
     item_description
-      ?.filter((y: ItemModel) => y.category === currentCategory)
+      ?.filter((y: ItemModel) => y.category === currentCategory||currentCategory===ItemCategory.All)
       .map(async (item: ItemModel, index: number) => {
         count += 1;
         if (count === 3 || index === length - 1) {
