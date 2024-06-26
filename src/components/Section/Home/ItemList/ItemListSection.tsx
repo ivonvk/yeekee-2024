@@ -28,17 +28,17 @@ const ItemListSection: React.FC<ItemListSectionProps> = ({}) => {
     var count = 0;
     var items_count = 0;
     Object.entries(ItemCategory).map((x: any, index) => {
-      count+=1
-      items_count+=1
-      
-      if (
-        count ===3 ||
-        index === Object.entries(ItemCategory).length - 1
-      ) {
+      count += 1;
+      items_count += 1;
 
+      if (count === 3 || index === Object.entries(ItemCategory).length - 1) {
         items.push(
           <div
-            className={sectionStyles.tab}
+            className={
+              currentCategory === (x[1] as ItemCategory)
+                ? sectionStyles.selectedTab
+                : sectionStyles.tab
+            }
             onClick={() => {
               setCurrentCategory(x[1] as ItemCategory);
             }}
@@ -47,37 +47,35 @@ const ItemListSection: React.FC<ItemListSectionProps> = ({}) => {
             {x[1].toString()}
           </div>
         );
-        
-        array.push(
-          <div
-            className={sectionStyles.imgBoxRow}
-            key={"array_" + items_count}
 
-          >
+        array.push(
+          <div className={sectionStyles.imgBoxRow} key={"array_" + items_count}>
             {items}
           </div>
         );
         items = [];
         count = 0;
       } else {
-
         count += 1;
-  
+
         items.push(
           <div
+          className={
+            currentCategory === (x[1] as ItemCategory)
+              ? sectionStyles.selectedTab
+              : sectionStyles.tab
+          }
+          onClick={() => {
+            setCurrentCategory(x[1] as ItemCategory);
+          }}
           key={"items_" + items_count}
-
-            className={sectionStyles.tab}
-            onClick={() => {
-              setCurrentCategory(x[1] as ItemCategory);
-            }}
-          >
-            {x[1].toString()}
-          </div>
+        >
+          {x[1].toString()}
+        </div>
         );
       }
     });
-    return <div className={sectionStyles.imgBoxColumm} >{array}</div>;
+    return <div className={sectionStyles.imgBoxColumm}>{array}</div>;
   };
   const renderImgById = (targetId: string) => {
     return items_array.find((x) => x.includes(targetId));
@@ -92,7 +90,10 @@ const ItemListSection: React.FC<ItemListSectionProps> = ({}) => {
       (y: ItemModel) => y.category === currentCategory
     )?.length;
     item_description
-      ?.filter((y: ItemModel) => y.category === currentCategory||currentCategory===ItemCategory.All)
+      ?.filter(
+        (y: ItemModel) =>
+          y.category === currentCategory || currentCategory === ItemCategory.All
+      )
       .map(async (item: ItemModel, index: number) => {
         count += 1;
         if (count === 3 || index === length - 1) {
@@ -121,8 +122,7 @@ const ItemListSection: React.FC<ItemListSectionProps> = ({}) => {
             </div>
           );
           array.push(
-            <div 
-            className={sectionStyles.imgBoxRow} key={"array_" + index}>
+            <div className={sectionStyles.imgBoxRow} key={"array_" + index}>
               {items}
             </div>
           );
@@ -139,7 +139,6 @@ const ItemListSection: React.FC<ItemListSectionProps> = ({}) => {
                 });
               }}
               key={"item_" + index}
-
             >
               <img
                 alt={item?.id ?? ""}

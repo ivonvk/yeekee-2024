@@ -13,5 +13,5 @@ export interface Item {
 export enum ItemCategory{
   L200="200L",
   L150="150L",
-  All="All",
+  All="所有類別",
 }
