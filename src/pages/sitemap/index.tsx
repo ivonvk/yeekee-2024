@@ -6,8 +6,9 @@ interface PageProps {
 }
 
 const SiteMap: NextPage<PageProps> = ({  }) => {
-  return (
-    <div dangerouslySetInnerHTML={{ __html: `<?xml version="1.0" encoding="UTF-8"?>
+
+  const xmlContent = `
+   <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://yk-ee.com/zh-HK/</loc>
@@ -21,7 +22,23 @@ const SiteMap: NextPage<PageProps> = ({  }) => {
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
-</urlset>` }} />
+</urlset>
+  `;
+
+  
+  const parser = new DOMParser();
+  const doc = parser.parseFromString(xmlContent, 'application/xml');
+  const items = doc.getElementsByTagName('item');
+
+  return (
+    <div>
+      {Array.from(items).map((item, index) => (
+        <div key={index}>
+          <h3>{item.getElementsByTagName('name')[0].textContent}</h3>
+          <p>{item.getElementsByTagName('description')[0].textContent}</p>
+        </div>
+      ))}
+    </div>
   );
 };
 
