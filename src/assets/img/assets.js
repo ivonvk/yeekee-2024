@@ -9,6 +9,7 @@ import SERVICE_FPS from './service/fps.png'
 import SERVICE_LIST from './service/list.png'
 import SERVICE_PAYME from './service/payme.png'
 import SERVICE_PAYMENT from './service/payment.jpg'
+import SITEMAP from './sitemap.xml'
 
 
 const assets = {
@@ -23,6 +24,7 @@ const assets = {
   SERVICE_LIST:SERVICE_LIST.src,
   SERVICE_PAYME:SERVICE_PAYME.src,
   SERVICE_PAYMENT:SERVICE_PAYMENT.src,
+  SITEMAP:SITEMAP.src,
 
 }
 

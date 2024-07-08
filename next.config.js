@@ -1,7 +1,11 @@
 /** @type {import('next').NextConfig} */
 const path = require('path');
 module.exports = {
-  webpack: (config) => {
+  webpack: (config, { buildId, dev, isServer, defaultLoaders, webpack }) => {
+    config.module.rules.push({
+      test: /\.xml$/,
+      use: 'xml-loader'
+    });
     config.module.rules.push({
       test: /\.csv$/,
       loader: 'csv-loader',
@@ -12,6 +16,13 @@ module.exports = {
           prematureEndLineCount: 0,
       },
     });
+    if (isServer) {
+      config.resolve.alias = {
+        ...config.resolve.alias,
+        'fs': false,
+        'sitemap': 'sitemap/dist/lib/sitemap-simple.js'
+      }
+    }
     return config;
   },
   i18n: {
