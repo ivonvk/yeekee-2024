@@ -17,7 +17,7 @@ module.exports = {
       new CopyWebpackPlugin({
         patterns: [
           {
-            from: path.resolve(__dirname, 'src', 'pages','sitemap', 'sitemap.xml'),
+            from: path.resolve(__dirname, 'src', 'sitemap.xml'),
             to: path.resolve(config.output.path,'static','media' ,'sitemap.xml'),
           },
         ],
