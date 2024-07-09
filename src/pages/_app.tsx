@@ -13,6 +13,7 @@ import { PagesProvider } from "../contexts/pages/use-pages";
 
 import "../../i18n";
 import ScrollToTopBtn from "../components/Button/ScrollToTopBtn";
+import SiteMap from "./sitemap";
 const messages: any = {
   "zh-HK": zh_HK
   
@@ -42,8 +43,10 @@ function MyApp({ Component, pageProps }: any) {
         defaultLocale={defaultLocale}
       >
         <PagesProvider>
+
         <Component {...pageProps} />
         <ScrollToTopBtn/>
+        <SiteMap/>
 
         </PagesProvider>
       </IntlProvider>

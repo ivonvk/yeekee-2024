@@ -43,7 +43,8 @@
     "sass": "^1.77.1",
     "sitemap": "^8.0.0",
     "typescript": "^4.9.5",
-    "web-vitals": "^2.1.4"
+    "web-vitals": "^2.1.4",
+    "xml-js": "^1.6.11"
   },
   "eslintConfig": {
     "extends": [
@@ -65,6 +66,7 @@
   },
   "devDependencies": {
     "@next/bundle-analyzer": "^14.2.4",
+    "copy-webpack-plugin": "^12.0.2",
     "csv-loader": "^3.0.5",
     "eslint": "^8.57.0",
     "react-app-rewired": "^2.2.1",

@@ -1,43 +1,27 @@
-
-import { GetServerSideProps, NextPage } from 'next';
-
-interface PageProps {
-  xml: string;
-}
-
-const SiteMap: NextPage<PageProps> = ({  }) => {
-
-  const xmlContent = `
-   <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url>
-    <loc>https://yk-ee.com/zh-HK/</loc>
-    <lastmod>2024-07-08</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>1.0</priority>
-  </url>
-  <url>
-    <loc>https://yk-ee.com/zh-HK/service</loc>
-    <lastmod>2024-07-08</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-</urlset>
-  `;
-
+import React, { useEffect, useState } from 'react';
+import xmlJs from 'xml-js';
+const SiteMap = () => {
+  const [xmlData, setXmlData] = useState(null);
   
-  const parser = new DOMParser();
-  const doc = parser.parseFromString(xmlContent, 'application/xml');
-  const items = doc.getElementsByTagName('item');
+  useEffect(() => {
+    fetch('./sitemap.xml') // Replace with the URL or path to your XML data
+      .then((response) => response.text())
+      .then((xmlText) => {
+        const jsonData = xmlJs.xml2json(xmlText, { compact: true, spaces: 4 });
+        setXmlData(JSON.parse(jsonData));
+      })
+      .catch((error) => {
+        console.error('Error fetching XML data:', error);
+      });
+  }, []);
 
   return (
-    <div>
-      {Array.from(items).map((item, index) => (
-        <div key={index}>
-          <h3>{item.getElementsByTagName('name')[0].textContent}</h3>
-          <p>{item.getElementsByTagName('description')[0].textContent}</p>
-        </div>
-      ))}
+    <div style={{display:'none'}}>
+      {xmlData ? (
+        <pre>{JSON.stringify(xmlData, null, 4)}</pre>
+      ) : (
+        <p>Loading XML data...</p>
+      )}
     </div>
   );
 };
