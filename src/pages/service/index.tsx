@@ -13,6 +13,7 @@ import { PagesType } from "../../types/pages";
 import Footer from "../../components/Footers/Footer";
 import ThemeSection from "../../components/Section/ThemeSection";
 import { useTranslation } from "react-i18next";
+import ItemListSection from "components/Section/Home/ItemList/ItemListSection";
 interface HomeProps {}
 const Home: NextPage<HomeProps> = ({}) => {
   const { t } = useTranslation();
@@ -33,13 +34,9 @@ const Home: NextPage<HomeProps> = ({}) => {
         }
       >
         <ThemeSection>
-          <CustomizationServiceSection />
+         
+          <ItemListSection/>
 
-          <ProductListSection />
-          <PaymentChannelsSection />
-
-          <HardwareRecyclingSection />
-          <Footer />
         </ThemeSection>
       </section>
     </>

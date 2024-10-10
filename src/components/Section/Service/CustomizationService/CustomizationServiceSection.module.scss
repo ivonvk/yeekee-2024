@@ -1,18 +1,24 @@
 .margin {
 }
 .container{
-  background-color: rgba(86, 164, 86,0.2);width: 100%;
+  background-color: rgba(86, 164, 86,0.2);
+  width: 100%;
 }
 .textBox{
   display: flex;
   flex-direction: row;
   margin-top: 48px;
 }
-@media screen and (max-width: 997px) {
-
+.block{
+  margin-top:04px
+}
+@media screen and (max-width: 1066px) {
+  .block{
+    margin-top: 24px
+  }
   .textBox{
     display: flex;
     flex-direction: column;
-    margin-top: 48px;
+    margin-top: 6px;
   }
 }

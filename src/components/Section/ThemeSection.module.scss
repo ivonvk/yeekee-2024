@@ -5,8 +5,15 @@
   background-repeat: no-repeat;
   background-size: cover;
   background-position: 0px 0px;
+  justify-content: center;
+  align-items: center;
+  display: flex;
 }
+// .padding{
+//   padding-left: 200px;
+//   padding-right: 200px;
 
+// }
 .margin {
   background-color: rgb(214, 253, 214, 0.2);
 }
@@ -15,22 +22,20 @@
   object-fit: cover;
 }
 .websiteBox {
-  flex-direction: column;
-  padding-left: 30px;
-  padding-top: 20px;
-  padding-bottom: 20px;
-  height: 400px;
-  justify-content: flex-end;
   display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .websiteBottom {
   background-color: rgba(255, 255, 255, 0.3);
   padding: 12px;
+  padding-left: 100px;
+  padding-right: 100px;
 }
 .websiteName {
   color: #252525;
   font-weight: bold;
-  font-size: 40px;
+  font-size: 72px;text-align: center;
 }
 .websiteDesc {
   color: #252525;
@@ -38,13 +43,18 @@
   font-size: 22px;
 }
 @media screen and (max-width: 997px) {
+  .websiteBottom {
+    background-color: rgba(255, 255, 255, 0.3);
+    padding: 12px;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
   .titleImg {
     background-position: 0px 50px;
     height: 300px;
   }
   .websiteBox {
     height: 300px;
-    width: 100%;
   }
   .imgSize {
     width: "100%";

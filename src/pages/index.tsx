@@ -14,6 +14,9 @@ import Header from "../components/Navbars/Header";
 import Footer from "../components/Footers/Footer";
 import ItemListSection from "../components/Section/Home/ItemList/ItemListSection";
 import ThemeSection from "../components/Section/ThemeSection";
+import PaymentChannelsSection from "components/Section/Service/PaymentChannels/PaymentChannelsSection";
+import CustomizationServiceSection from "components/Section/Service/CustomizationService/CustomizationServiceSection";
+import HardwareRecyclingSection from "components/Section/Service/HardwareRecycling/HardwareRecyclingSection";
 
 interface HomeProps {
 }
@@ -44,8 +47,12 @@ styles.sectionHome
   }
 >
   <ThemeSection>
-    <ItemListSection/>
-    <Footer />
+  <CustomizationServiceSection />
+
+{/* <ProductListSection /> */}
+<PaymentChannelsSection />
+
+<HardwareRecyclingSection />
   </ThemeSection>
 </section>
     </>

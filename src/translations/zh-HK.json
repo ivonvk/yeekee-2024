@@ -5,7 +5,7 @@
   "website.shortDescription": "香港專業回收化工桶，舊桶再處理多用途化",
  
   "menu.homepage": "主頁",
- "menu.service": "服務",
+ "menu.service": "貨品清單",
 "menu.contact_us": "聯絡我們",
 "menu.about_us": "關於我們",
 
@@ -18,8 +18,8 @@
 "service.hardware_recycling": "五金回收",
 "hardware_recycling.shortDescription":"義記",
 
-"service.customization_service": "訂造服務",
-"customization_service.shortDescription":"提供訂造要求，尺吋大小",
+"service.customization_service": "主要服務",
+"customization_service.shortDescription":"回收/買賣桶類/桶類升級改造",
 
 "customization_service.type": "種類",
 "customization_service.size": "尺吋",

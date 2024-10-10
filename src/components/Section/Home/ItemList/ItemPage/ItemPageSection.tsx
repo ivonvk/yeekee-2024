@@ -72,7 +72,7 @@ const ItemPageSection: React.FC<ItemPageSectionProps> = ({}) => {
               alt={item}
               onClick={() => {
                 router.push({
-                  pathname: `/homepage/item_page`,
+                  pathname: `/service/item_page`,
                   query: { id: getId(item) },
                 });
               }}
@@ -107,7 +107,7 @@ const ItemPageSection: React.FC<ItemPageSectionProps> = ({}) => {
               alt={item}
               onClick={() => {
                 router.push({
-                  pathname: `/homepage/item_page`,
+                  pathname: `/service/item_page`,
                   query: { id: getId(item) },
                 });
               }}
@@ -132,7 +132,7 @@ const ItemPageSection: React.FC<ItemPageSectionProps> = ({}) => {
           onClick={() => {
             router.push({
               //   pathname: `/homepage`
-              pathname: `/`,
+              pathname: `/service`,
             });
           }}
         >

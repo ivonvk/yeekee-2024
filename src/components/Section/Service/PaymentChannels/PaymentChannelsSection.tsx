@@ -15,7 +15,7 @@ const PaymentChannelsSection: React.FC<
   const { t } = useTranslation();
 
   return (
-    <InnerSection className={`${styles.container} ${sectionStyles.margin}`}>
+    <InnerSection className={`${styles.container} ${sectionStyles.margin} ${sectionStyles.container}`}>
         <div className={styles.section}>
             <div className={styles.title}>
               {t(`service.payment_channels`)}

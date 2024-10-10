@@ -17,7 +17,7 @@ const ItemPage: NextPage<ItemPageProps> = ({}) => {
   const { t } = useTranslation();
 
   useEffect(() => {
-    pagesContext.setPages(PagesType.homepage);
+    pagesContext.setPages(PagesType.service);
   }, []);
   return (
     <>
@@ -32,7 +32,6 @@ const ItemPage: NextPage<ItemPageProps> = ({}) => {
       >
         <ThemeSection>
           <ItemPageSection/>
-          <Footer />
         </ThemeSection>
       </section>
     </>

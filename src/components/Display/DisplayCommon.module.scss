@@ -7,7 +7,7 @@
   margin-right: 12px;
   border-radius: 12px;
   padding-top: 24px;
-  padding-bottom: 24px;width: 33%;
+  padding-bottom: 24px;width: auto;
 }
 
 .iconBox {
@@ -35,11 +35,11 @@
   font-weight: bold;
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: center;text-align: center;
 }
 .bar {
   height: 4px;
-  width: 100px;
+  width: 15%;
   margin-bottom: 12px;
   background-color: green;
   padding-left: 12px;
@@ -61,23 +61,21 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  text-align: center;
   margin-top: 4px;
   padding-left: 12px;
   padding-right: 12px;
 }
-@media screen and (max-width: 997px) {
+@media screen and (max-width: 1366px) {
   .infoBox {
 
-    margin-left:0px;
-    margin-right: 0px;
 
   }
   .title {
-    width: 100px;
   }
   .bar {
     height: 4px;
-    width: 200px;
+    width: 15%;
     
     background-color: green;
     padding-left: 12px;
@@ -92,7 +90,35 @@
     margin-bottom: 0px;
   }
   .content {
-    width: 80%;
-    margin-bottom: 24px;
+
+  }
+}
+@media screen and (max-width: 997px) {
+  .infoBox {
+
+    margin-left:0px;
+    margin-right: 0px;
+
+  }
+  .title {
+  }
+  .bar {
+    height: 4px;
+    width: 15%;
+    
+    background-color: green;
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+  .infoBox {
+    margin-bottom: 24px;width: 100%;
+  }
+  
+  .iconBox {
+    margin-top: 0px;
+    margin-bottom: 0px;
+  }
+  .content {
+
   }
 }

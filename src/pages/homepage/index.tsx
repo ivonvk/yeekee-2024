@@ -26,13 +26,10 @@ const Home: NextPage<HomeProps> = ({}) => {
 
       <section
         id="home"
-        className={
-      styles.sectionHome
-        }
+  
       >
         <ThemeSection>
-          <ItemListSection/>
-          <Footer />
+  
         </ThemeSection>
       </section>
     </>

@@ -102,7 +102,7 @@ const ItemListSection: React.FC<ItemListSectionProps> = ({}) => {
               className={sectionStyles.imgBox}
               onClick={() => {
                 router.push({
-                  pathname: `/homepage/item_page`,
+                  pathname: `/service/item_page`,
                   query: { id: item.id },
                 });
               }}
@@ -134,7 +134,7 @@ const ItemListSection: React.FC<ItemListSectionProps> = ({}) => {
               className={sectionStyles.imgBox}
               onClick={() => {
                 router.push({
-                  pathname: `/homepage/item_page`,
+                  pathname: `/service/item_page`,
                   query: { id: item.id },
                 });
               }}

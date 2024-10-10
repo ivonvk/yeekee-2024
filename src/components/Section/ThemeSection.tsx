@@ -1,6 +1,7 @@
 import React from "react";
 import styles from "../Section/ThemeSection.module.scss";
 import { useTranslation } from "react-i18next";
+import Footer from "components/Footers/Footer";
 
 interface MainCarouselProps {
   children?: any;
@@ -23,7 +24,10 @@ const ThemeSection: React.FC<MainCarouselProps> = ({ children }) => {
          </div>
         </div>
       </div>
-      {children}
+      <div className={styles.padding}>
+      {children}</div>
+      <Footer />
+
     </div>
   );
 };
