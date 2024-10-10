@@ -1,0 +1,126 @@
+/* src/CareerPath.css */
+.current{
+  margin-bottom: 90px;
+}
+.careerPath {
+  padding: 20px;
+  max-width: 600px;
+  margin: auto;
+  position: relative;
+}
+
+.steps {
+  position: relative;
+  padding: 20px 0;
+  margin-top: 200px;
+}
+
+.step {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  margin: 20px 0;
+  
+}
+
+.content {
+  background: #f9f9f9;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  width: 45%; /* Adjust width for better spacing */
+  transform: translateY(-100px);
+
+}
+
+.left {
+  justify-content: flex-start;
+}
+
+.right {
+  justify-content: flex-end;
+}
+
+.line {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: #ccc;
+  transform: translateX(-50%);
+  z-index: -1; /* Ensure line is behind the content */
+}
+.lineFirst {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: #ccc;
+  transform: translateX(-50%);
+  transform: translateY(100px);
+  z-index: -1; /* Ensure line is behind the content */
+  height: 200px;
+}
+.lineFirst::before {
+  content: '';
+  position: absolute;
+  top: -10px; /* Adjust to place the arrow above the line */
+  left: 50%;
+  transform: translateX(-50%) rotate(135deg);
+  width: 15px;
+  height: 15px;
+  border-left: 2px solid #ccc;
+  border-bottom: 2px solid #ccc;
+}
+.line::before {
+  content: '';
+  position: absolute;
+  top: -10px; /* Adjust to place the arrow above the line */
+  left: 50%;
+  transform: translateX(-50%) rotate(135deg);
+  width: 15px;
+  height: 15px;
+  border-left: 2px solid #ccc;
+  border-bottom: 2px solid #ccc;
+}
+
+/* 响应式设计 */
+@media (max-width: 600px) {
+
+  .lineFirst {
+    position: absolute;
+    left: 50%;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: #ccc;
+    transform: translateX(-50%);
+    transform: translateY(120px);
+    z-index: -1; /* Ensure line is behind the content */
+    height: 100px;
+  }
+
+
+  .current{
+    margin-top: 24px;
+  }
+  .careerPath {
+    padding: 10px;
+  }
+
+  .step {
+    flex-direction: column; /* Stack vertically on small screens */
+    align-items: flex-start;
+  }
+
+  .content {
+    width: 100%; /* Full width on small screens */
+  }
+
+  // .line {
+  //   display: none; /* Hide line on small screens */
+  // }
+}
