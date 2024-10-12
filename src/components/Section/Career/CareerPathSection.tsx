@@ -35,7 +35,7 @@ const CareerSection: React.FC<ProductListSectionProps> = ({}) => {
     
     {
       title: "環保意識抬頭",
-      description: "化工桶開始沒落,人們對環境保護增強,導致需要化工產品污染性行業開始管制,興城衰落",
+      description: "化工桶開始沒落,人們對環境保護增強,導致需要化工產品污染性行業開始管制,興盛興衰落",
         year: "2000後"
     },
     {
