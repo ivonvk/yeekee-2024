@@ -128,7 +128,7 @@ const Header: React.FC<HeaderProps> = ({ scrollTransparent }) => {
             >
               {renderBtns(PagesType.homepage, `/${locale}/`)}
               {renderBtns(PagesType.service, `/${locale}/service`)}
-              {/* {renderBtns(PagesType.career, `/${locale}/career`)} */}
+              {renderBtns(PagesType.career, `/${locale}/career`)}
               {renderScrollPageBtn(
                 PagesType.contact_us,
                 `/${locale}/contact_us`

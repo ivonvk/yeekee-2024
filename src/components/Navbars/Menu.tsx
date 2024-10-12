@@ -63,6 +63,7 @@ const Menu: React.FC<MenuProps> = ({ open, toggleMenu }) => {
       <div className={styles.wrapper}>
         {renderBtns(PagesType.homepage, `/${locale}/`)}
         {renderBtns(PagesType.service, `/${locale}/service`)}
+        {renderBtns(PagesType.career, `/${locale}/career`)}
         {renderScrollPageBtn(PagesType.contact_us, `/${locale}/contact_us`)}
       </div>
     </div>
