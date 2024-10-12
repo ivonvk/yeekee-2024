@@ -2,10 +2,7 @@ import React from "react";
 import styles from "../SectionCommon.module.scss";
 import sectionStyles from "../Career/CareerPathSection.module.scss";
 import InnerSection from "../InnerSection";
-import assets from "../../../assets/img/assets";
 import { useTranslation } from "react-i18next";
-import Career from "components/Display/CareerPath";
-import { CareerNode } from "types/career";
 import CareerPath from "components/Display/CareerPath";
 
 
@@ -23,6 +20,23 @@ const CareerSection: React.FC<ProductListSectionProps> = ({}) => {
       title: "面向中國大陸",
       description: "回歸後大量香港人北上投資,工廠北移,導致各行各業化工產品需求大減",
         year: "2000年 - 現在"
+    },
+    {
+      title: "有失",
+      description: "因為廢料處理,化工桶屬於化學原料的容器,化工桶需要清洗,所以環保處要限制使用,導理各行各業逼於逐漸減少用使用化工桶,因為城市規劃,地方限制,環保意識限制,對處理化工行業產生運作很大困難",
+        year: "2000後"
+    },
+    {
+      title: "有得",
+      description: "遷拆七層大廈徙置區導致大量石棉出現,所以用大量空鐵桶盛載,因為時代變遷,公屋需求重新改造生活環境,有新的公屋出現,加上廢料處理需要大量空桶盛載,例如廢油/廢油渣/石棉/廢豬油,其實環保意識的抬頭,現在的化工桶用保險袋盛裝原料再放入化工桶,便可循環再用,不用清洗",
+        year: "2000後"
+    },
+
+    
+    {
+      title: "環保意識抬頭",
+      description: "化工桶開始沒落,人們對環境保護增強,導致需要化工產品污染性行業開始管制,興城衰落",
+        year: "2000後"
     },
     {
       title: "有機耕種/魚菜共生",
