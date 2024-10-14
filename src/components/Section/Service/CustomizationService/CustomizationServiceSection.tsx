@@ -128,7 +128,6 @@ const CustomizationServiceSection: React.FC<
  <InfoBox
           title={`大鐵桶`}
           content={`電油桶/豬油桶/化工鐵桶，可上門回收或者買賣`}
-          containerStyles={{width:'100%'}}
           
         />
         
@@ -155,7 +154,6 @@ const CustomizationServiceSection: React.FC<
 
       
         <InfoBox
-           containerStyles={{width:'100%'}}
 
           title={`膠罐`}
           content={`可上門回收或者買賣，通常做大量，至少100~200隻，一車可以車500~600個`}
@@ -166,7 +164,6 @@ const CustomizationServiceSection: React.FC<
 
       <div className={sectionStyles.textBox}>
         <InfoBox
-           containerStyles={{width:'100%'}}
 
           title={`漂水罐仔`}
           content={`可上門回收或者買賣，通常做大量，至少100~200隻，一車可以車500~600個`}
