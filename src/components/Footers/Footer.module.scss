@@ -28,17 +28,18 @@
 .text{
   color:#ffffff;
   font-weight: bold;
-  width:70%;
   font-size: 18px;
   word-wrap: break-word;
   overflow-wrap: break-word;
   cursor: pointer;
+  width: 70%;
 }
 .textBox{
   display: flex;
   flex-direction: row;
   margin-top: 6px;
   margin-bottom: 6px;
+
 }
 .textBoxes{
   display: flex;
@@ -68,10 +69,21 @@
 
 
 @media screen and (max-width: 997px) {
+  .text{
+    color:#ffffff;
+    font-weight: bold;
+    font-size: 18px;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    cursor: pointer;
+    width: 90%;
+  }
   .section{
     
     flex-direction: column;
-    align-items: center
+    align-items: center;
+    padding-left:30px;
+    padding-right: 30px;
   }
 
   .footer {
