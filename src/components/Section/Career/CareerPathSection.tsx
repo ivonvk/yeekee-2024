@@ -12,7 +12,7 @@ const CareerSection: React.FC<ProductListSectionProps> = ({}) => {
   const { t } = useTranslation();
   const careerSteps = [
     {
-      title: "政府漁農處鼓勵\n有機復耕",
+      title: "政府漁農處\n鼓勵有機復耕",
       description: "政府鼓勵大學在河套區研究農耕漁業新科技發展,鼓勵年青人參與科研發展,包括新的耕種方法",
         year: "2017後"
     },
