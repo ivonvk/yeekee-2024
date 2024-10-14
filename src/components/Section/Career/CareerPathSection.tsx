@@ -12,7 +12,7 @@ const CareerSection: React.FC<ProductListSectionProps> = ({}) => {
   const { t } = useTranslation();
   const careerSteps = [
     {
-      title: "工廠業式微",
+      title: "工業式微",
       description: "因為面對內地生產,很多在香港工廠生產的品牌開始式微,導致化工桶大減,例如鐘錶製造業/紡織業/漂染業/甚至飲食業,因為人們開始北上消費",
         year: "2000年 - 現在"
     },
