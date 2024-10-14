@@ -62,46 +62,44 @@ const ItemPageSection: React.FC<ItemPageSectionProps> = ({}) => {
       targetItem?.other_ids?.split(",")?.map(async (item, index) => {
         count += 1;
         if (
-          (count % 5 === 0 ||
+          count % 5 === 0 ||
           (targetItem?.other_ids &&
-            index === targetItem?.other_ids?.split(",")?.length - 1))
+            index === targetItem?.other_ids?.split(",")?.length - 1)
         ) {
-          if(item&&item!==''&&item!=="undefined") {
-          temp_items.push(
-            <img
-              alt={item}
-              onClick={() => {
-                router.push({
-                  pathname: `/service/item_page`,
-                  query: { id: getId(item) },
-                });
-              }}
-              src={renderImgById(item)}
-              className={sectionStyles.img}
-              key={index}
-            ></img>
-          );
-        }
-        var temp_count =getLastCharNumber(temp_items?.length?.toString())
-
-        if(temp_items?.length<4&&temp_count){
-          for(let i =0;i<3;i++){
-            temp_items.push(<div
-          
-              className={sectionStyles.imgNull}
-              key={index}
-            ></div>)
+          if (item && item !== "" && item !== "undefined") {
+            temp_items.push(
+              <img
+                alt={item}
+                onClick={() => {
+                  router.push({
+                    pathname: `/service/item_page`,
+                    query: { id: getId(item) },
+                  });
+                }}
+                src={renderImgById(item)}
+                className={sectionStyles.img}
+                key={index}
+              ></img>
+            );
           }
-        }
+          var temp_count = getLastCharNumber(temp_items?.length?.toString());
+
+          if (temp_items?.length < 4 && temp_count) {
+            for (let i = 0; i < 3; i++) {
+              temp_items.push(
+                <div className={sectionStyles.imgNull} key={index}></div>
+              );
+            }
+          }
           array.push(
             <div className={sectionStyles.imgBoxRow} key={"array_" + index}>
               {temp_items}
             </div>
           );
-          var temp_count =getLastCharNumber(array?.length?.toString())
-         
+          var temp_count = getLastCharNumber(array?.length?.toString());
+
           temp_items = [];
-        } else if(item&&item!==''&&item!=="undefined") {
+        } else if (item && item !== "" && item !== "undefined") {
           temp_items.push(
             <img
               alt={item}
@@ -118,9 +116,6 @@ const ItemPageSection: React.FC<ItemPageSectionProps> = ({}) => {
           );
         }
       });
-
-    
-      
 
     return <div className={sectionStyles.imgBoxColumm}>{array}</div>;
   };
@@ -139,29 +134,32 @@ const ItemPageSection: React.FC<ItemPageSectionProps> = ({}) => {
           {t(`label.backHomepage`)}
         </div>
         <div className={sectionStyles.box}>
-          <img
-            alt={`${id}`}
-            onClick={() => {
-              setOpenModal(true);
-            }}
-            className={sectionStyles.mainImg}
-            src={renderImg()}
-          />
+          <div  className={sectionStyles.insideBox}>
+            <img
+              alt={`${id}`}
+              onClick={() => {
+                setOpenModal(true);
+              }}
+              className={sectionStyles.mainImg}
+              src={renderImg()}
+            />
+            <div className={sectionStyles.column}>
+              <div className={sectionStyles.row}>
+                <div className={sectionStyles.labelStyle}>
+                  <CommonLabel text={t(`label.name`)} />
+                </div>
+                <CommonLabel text={targetItem.name_zh ?? "-"} />
+              </div>
 
+              <div className={sectionStyles.row}>
+                <div className={sectionStyles.labelStyle}>
+                  <CommonLabel text={t(`label.description`)} />
+                </div>
+                <CommonLabel text={targetItem.description ?? "-"} />
+              </div>
+            </div>
+          </div>
           <div className={sectionStyles.infoBox}>
-            <div className={sectionStyles.row}>
-              <div className={sectionStyles.labelStyle}>
-                <CommonLabel text={t(`label.name`)} />
-              </div>
-              <CommonLabel text={targetItem.name_zh ?? "-"} />
-            </div>
-
-            <div className={sectionStyles.row}>
-              <div className={sectionStyles.labelStyle}>
-                <CommonLabel text={t(`label.description`)} />
-              </div>
-              <CommonLabel text={targetItem.description ?? "-"} />
-            </div>
             {/* <div className={sectionStyles.labelClick}>
                 {t(`label.askItem`)}
             </div> */}
