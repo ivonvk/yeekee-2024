@@ -60,21 +60,21 @@ const CustomizationServiceSection: React.FC<
         
         <InfoBox
           title={`漂水廠罐仔回收`}
-          content={`用完漂水的罐仔可用高於廢膠回收價的價錢回收，詳細需要與客戶溝通及拍照給我們查看`}
+          content={`用完漂水的罐仔可用高於廢膠回收價錢回收，詳細需要與客戶溝通及拍照給我們查看`}
         />
         <InfoBox
           title={`洗潔精廠梘油桶回收`}
-          content={`用完洗淨精的梘油桶可用高於廢膠回收價的價錢回收，詳細需要與客戶溝通及拍照給我們查看`}
+          content={`用完洗淨精的梘油桶可用高於廢膠回收價錢回收，詳細需要與客戶溝通及拍照給我們查看`}
         />
         <InfoBox
           title={`食物廠食物/豬油桶回收`}
-          content={`用完的食物/豬油桶可用高於廢膠回收價的價錢回收，詳細需要與客戶溝通及拍照給我們查看`}
+          content={`用完的食物/豬油桶可用高於廢膠回收價錢回收，詳細需要與客戶溝通及拍照給我們查看`}
         />
       </div>
       <div className={sectionStyles.textBox}>
         <InfoBox
           title={`蠔油豉油裝醋回收`}
-          content={`用完蠔油豉油裝醋的罐仔/吉桶可用高於廢膠回收價的價錢回收，詳細需要與客戶溝通及拍照給我們查看`}
+          content={`用完蠔油豉油裝醋的罐仔/吉桶可用高於廢膠回收價錢回收，詳細需要與客戶溝通及拍照給我們查看`}
         />
         <InfoBox
           title={`膠桶鋸開定製`}
@@ -117,14 +117,18 @@ const CustomizationServiceSection: React.FC<
 
       <div className={sectionStyles.textBox}>
  
-        <InfoBox title={`藍色大桶`} content={`可鋸開兩半並訂做不同用途，可上門回收或者買賣`} />
+        <InfoBox 
+        
+        title={`藍色大桶`} content={`可鋸開兩半並訂做不同用途，可上門回收或者買賣`} />
         <InfoBox
+
           title={`白色大桶`}
           content={`白色大膠桶，可上門回收或者買賣`}
         />
  <InfoBox
           title={`大鐵桶`}
           content={`電油桶/豬油桶/化工鐵桶，可上門回收或者買賣`}
+          containerStyles={{width:'50%'}}
           
         />
         
@@ -134,18 +138,27 @@ const CustomizationServiceSection: React.FC<
       <div className={sectionStyles.textBox}>
         <InfoBox title={`雙邊魚排桶`} content={`拆漁排用，養魚養蠔，做木筏，可上門回收或者買賣`} />
 
-      <InfoBox title={`有蓋鐵桶`} content={`可上門回收或者買賣`} />
+      <InfoBox title={`有蓋鐵桶`}
+            containerStyles={{width:'20%'}}
+      
+      content={`可上門回收或者買賣`} />
         <InfoBox
+            containerStyles={{width:'50%'}}
+
           title={`蓋鈷鐵桶`}
           content={`做環保桶用，化學廢理，回收化學廢料，可上門回收或者買賣，通常一車做50~60個`}
         /></div>
       <div className={sectionStyles.textBox}>
      
     
-        <InfoBox title={`中桶`} content={`一車可以裝到最多110個，可上門回收或者買賣`} />
+        <InfoBox
+        
+        title={`中桶`} content={`一車可以裝到最多110個，可上門回收或者買賣`} />
 
       
         <InfoBox
+            containerStyles={{width:'50%'}}
+
           title={`膠罐`}
           content={`可上門回收或者買賣，通常做大量，至少100~200隻，一車可以車500~600個`}
         />
@@ -155,10 +168,15 @@ const CustomizationServiceSection: React.FC<
 
       <div className={sectionStyles.textBox}>
         <InfoBox
+            containerStyles={{width:'55%'}}
+
           title={`漂水罐仔`}
           content={`可上門回收或者買賣，通常做大量，至少100~200隻，一車可以車500~600個`}
         />
-        <InfoBox title={`手抽桶`} content={`二手但9成新，外牆開水泥/泥漿用`} />
+        <InfoBox 
+            containerStyles={{width:'25%'}}
+        
+        title={`手抽桶`} content={`二手但9成新，外牆開水泥/泥漿用`} />
         <InfoBox
           title={`1000升水箱`}
           content={`地盤用／裝食水/儲水/其他用途`}

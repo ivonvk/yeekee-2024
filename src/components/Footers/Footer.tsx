@@ -50,7 +50,7 @@ const Footer = () => {
             <div
               className={styles.text}
               onClick={() => {
-                navigator.clipboard.writeText(`93558010 陳生`);
+                navigator.clipboard.writeText(`93558010`);
                 alert(t("alert.copyDone"));
               }}
             >{`93558010 陳生 (${t(`label.clickCopy`)})`}</div>
@@ -65,17 +65,27 @@ const Footer = () => {
               }}
             >{`YUSING1961@GMAIL.COM (${t(`label.clickCopy`)})`}</div>
           </div>
-
           <div className={styles.textBox}>
+            <div className={styles.label}>{`${t(`footer.whatsapp`)}: `}</div>
+            <div
+              className={styles.text}
+              onClick={() => {
+                navigator.clipboard.writeText(`93558010`);
+                alert(t("alert.copyDone"));
+              }}
+            >{`93558010 (${t(`label.clickCopy`)})`}</div>
+          </div>
+          {/* <div className={styles.textBox}>
             <div className={styles.label}>{`${t(`footer.wechat`)}: `}</div>
             <div
               className={styles.text}
               onClick={() => {
-                navigator.clipboard.writeText(`wxid_ftqdcyzzlb5n22`);
+                navigator.clipboard.writeText(`eric544544`);
                 alert(t("alert.copyDone"));
               }}
-            >{`wxid_ftqdcyzzlb5n22 (${t(`label.clickCopy`)})`}</div>
-          </div>
+            >{`eric544544 (${t(`label.clickCopy`)})`}</div>
+          </div> */}
+         
         </div>
         <div style={{ flex: 1 }} />
         <a href={googleMapLink} target="_blank">

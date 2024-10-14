@@ -16,7 +16,7 @@ const CareerPath: React.FC<CareerPathProps> = ({ steps }) => {
   return (
     <div className={styles.careerPath}>
       <div className={styles.current}>
-        <h3>{`現在`}</h3>
+        <h3>{`現在(持續更新)`}</h3>
         <p>{``}</p>
         <span className={styles.year}>{2024}</span>
         <div className={styles.lineFirst} />
