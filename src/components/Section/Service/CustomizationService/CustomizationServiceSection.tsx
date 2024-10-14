@@ -128,7 +128,7 @@ const CustomizationServiceSection: React.FC<
  <InfoBox
           title={`大鐵桶`}
           content={`電油桶/豬油桶/化工鐵桶，可上門回收或者買賣`}
-          containerStyles={{width:'50%'}}
+          containerStyles={{width:'100%'}}
           
         />
         
@@ -139,11 +139,9 @@ const CustomizationServiceSection: React.FC<
         <InfoBox title={`雙邊魚排桶`} content={`拆漁排用，養魚養蠔，做木筏，可上門回收或者買賣`} />
 
       <InfoBox title={`有蓋鐵桶`}
-            containerStyles={{width:'20%'}}
       
       content={`可上門回收或者買賣`} />
         <InfoBox
-            containerStyles={{width:'50%'}}
 
           title={`蓋鈷鐵桶`}
           content={`做環保桶用，化學廢理，回收化學廢料，可上門回收或者買賣，通常一車做50~60個`}
@@ -157,7 +155,7 @@ const CustomizationServiceSection: React.FC<
 
       
         <InfoBox
-            containerStyles={{width:'50%'}}
+           containerStyles={{width:'100%'}}
 
           title={`膠罐`}
           content={`可上門回收或者買賣，通常做大量，至少100~200隻，一車可以車500~600個`}
@@ -168,13 +166,12 @@ const CustomizationServiceSection: React.FC<
 
       <div className={sectionStyles.textBox}>
         <InfoBox
-            containerStyles={{width:'55%'}}
+           containerStyles={{width:'100%'}}
 
           title={`漂水罐仔`}
           content={`可上門回收或者買賣，通常做大量，至少100~200隻，一車可以車500~600個`}
         />
         <InfoBox 
-            containerStyles={{width:'25%'}}
         
         title={`手抽桶`} content={`二手但9成新，外牆開水泥/泥漿用`} />
         <InfoBox
