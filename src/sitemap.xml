@@ -6,10 +6,16 @@
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
-  <url>
-    <loc>https://yk-ee.com/zh-HK/service</loc>
+   <url>
+    <loc>https://yk-ee.com/zh-HK/career</loc>
     <lastmod>2024-07-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+  </url>
+    <url>
+    <loc>https://yk-ee.com/zh-HK/service</loc>
+    <lastmod>2024-07-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
   </url>
 </urlset>
