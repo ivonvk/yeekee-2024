@@ -98,9 +98,9 @@
     width: 2px;
     background: #ccc;
     transform: translateX(-50%);
-    transform: translateY(120px);
-    z-index: -1; /* Ensure line is behind the content */
-    height: 100px;
+  transform: translateY(200px);
+  z-index: -1; /* Ensure line is behind the content */
+  height: 190px;
   }
 
 
