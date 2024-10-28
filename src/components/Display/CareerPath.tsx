@@ -16,8 +16,8 @@ const CareerPath: React.FC<CareerPathProps> = ({ steps }) => {
   return (
     <div className={styles.careerPath}>
       <div className={styles.current}>
-        <h3>{`現在(持續更新)`}</h3>
-        <p>{``}</p>
+        <h3>{`現在\n(持續更新)\n最後更新日期:28-10-2024`}</h3>
+        <p>{`-`}</p>
         <span className={styles.year}>{2024}</span>
         <div className={styles.lineFirst} />
       </div>
